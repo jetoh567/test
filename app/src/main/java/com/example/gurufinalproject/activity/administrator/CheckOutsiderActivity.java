@@ -1,16 +1,16 @@
-package com.example.gurufinalproject.activity;
+package com.example.gurufinalproject.activity.administrator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-
 import com.example.gurufinalproject.R;
 
-public class MainActivity extends AppCompatActivity {
+import android.os.Bundle;
+
+public class CheckOutsiderActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_check_outsider);
     }
 }
