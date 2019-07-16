@@ -34,6 +34,8 @@ public class Fragment_1 extends Fragment {
         // 전화걸기 버튼
         //view.findViewById(R.id)
 
+        // 메인페이지로 가는 버튼
+
         return view;
     }// end Oncreate
 
