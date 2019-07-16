@@ -6,8 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.bean.MemberBean;
+import com.example.gurufinalproject.db.FileDB;
+
+import org.w3c.dom.Text;
 
 public class MemberDetailActivity extends AppCompatActivity {
 
@@ -15,6 +20,16 @@ public class MemberDetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_detail);
+
+        TextView txtMemName = findViewById(R.id.txtMemName);
+        TextView txtMemId = findViewById(R.id.txtMemId);
+        TextView txtMemNum = findViewById(R.id.txtMemNum);
+
+        MemberBean memberBean = FileDB.getLoginMember(getApplicationContext());
+
+        txtMemName.setText(memberBean.name);
+        txtMemId.setText(memberBean.userid);
+        txtMemNum.setText(memberBean.userNum);
 
         Button btnMemWrite = findViewById(R.id.btnMemWrite);
         btnMemWrite.setOnClickListener(new View.OnClickListener() {
@@ -24,5 +39,13 @@ public class MemberDetailActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-    }
-}
+
+        Button btnMemLogout = findViewById(R.id.btnMemLogout);
+        btnMemLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    } // end Oncreate
+} // end class
