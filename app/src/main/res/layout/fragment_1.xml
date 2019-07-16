@@ -24,5 +24,10 @@
         android:text="전화를 걸 경우, \n02-970-1000 번으로 연락이 갑니다. \n종합상황실에서 빠르게 대응할 것 입니다."
         android:textSize="20dp"/>
 
-
+    <Button
+        android:id="@+id/btnCall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="전화걸기" />
+    
 </LinearLayout>

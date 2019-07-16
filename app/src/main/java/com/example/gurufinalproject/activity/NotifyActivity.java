@@ -16,6 +16,7 @@ import com.example.gurufinalproject.fragment.Fragment_4;
 import com.example.gurufinalproject.fragment.Fragment_5;
 import com.google.android.material.tabs.TabLayout;
 
+// 메인 신고글 페이지 (신고내용 설명 - fragment*5)
 public class NotifyActivity extends AppCompatActivity {
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
