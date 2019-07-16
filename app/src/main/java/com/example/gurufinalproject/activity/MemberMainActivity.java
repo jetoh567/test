@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.fragment.Fragment_2;
 
 public class MemberMainActivity extends AppCompatActivity {
 
@@ -26,6 +27,13 @@ public class MemberMainActivity extends AppCompatActivity {
                     Intent i = new Intent(getBaseContext(),MemberDetailActivity.class);
                     startActivity(i);
                     break;
+
+                case R.id.btn_2:
+                    Intent i1 = new Intent(getBaseContext(), Fragment_2.class);
+                    startActivity(i1);
+                    break;
+
+
             }
         }
     };
