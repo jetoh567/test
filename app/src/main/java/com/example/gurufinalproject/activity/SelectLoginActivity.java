@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.bean.MemberBean;
+import com.example.gurufinalproject.db.FileDB;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -57,18 +59,31 @@ public class SelectLoginActivity extends AppCompatActivity {
                         Toast.makeText(getBaseContext(),"Google 로그인 인증 후 회원가입 가능합니다.",Toast.LENGTH_SHORT).show();
                         return;
                     }
+                    MemberBean findAdmin = FileDB.getFindAdmin(getBaseContext(),account);
+                    if(findAdmin != null){
+                        Toast.makeText(getBaseContext(),"이미 가입되어 있는 아이디입니다.",Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     Intent i = new Intent(getBaseContext(),AdminJoinActivity.class);
                     i.putExtra("AdminID",account);
                     startActivity(i);
+                    finish();
                     break;
+
                 case R.id.btnMember:
                     if(account == ""){
                         Toast.makeText(getBaseContext(),"Google 로그인 인증 후 회원가입 가능합니다.",Toast.LENGTH_SHORT).show();
                         return;
                     }
+                    MemberBean findmember= FileDB.getFindMember(getBaseContext(),account);
+                    if(findmember != null){
+                        Toast.makeText(getBaseContext(),"이미 가입되어 있는 아이디입니다.",Toast.LENGTH_SHORT).show();
+                        return;
+                    }
                     Intent i2 = new Intent(getBaseContext(),MemberJoinActivity.class);
                     i2.putExtra("MemberID",account);
                     startActivity(i2);
+                    finish();
                     break;
             }
         }

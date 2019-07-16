@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -28,6 +29,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import java.io.File;
 import java.io.FileDescriptor;
 import java.lang.reflect.Member;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     //구글 로그인 클라이언트 제어자
@@ -83,9 +85,16 @@ public class LoginActivity extends AppCompatActivity {
                 if(findMember != null){
                     //FireBase 인증하러가기
                     fireBaseAuthWithGoogle(account);
-
+                    Toast.makeText(getBaseContext(),"firebase 학생 성공",Toast.LENGTH_SHORT).show();
                 }else{
-                    Toast.makeText(getBaseContext(),"해당 아이디는 가입이 되어있지 않습니다.",Toast.LENGTH_SHORT).show();
+                    findMember = FileDB.getFindAdmin(this,account.getEmail());
+                    if(findMember != null){
+                        //FireBase 인증하러가기
+                        fireBaseAuthWithGoogle(account);
+                        Toast.makeText(getBaseContext(),"firebase 관리자 성공",Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(getBaseContext(),"해당 아이디는 가입이 되어있지 않습니다.",Toast.LENGTH_SHORT).show();
+                    }
                 }
 
             }catch(ApiException e){

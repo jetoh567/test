@@ -54,6 +54,13 @@
             android:layout_weight="0.7"></Spinner>
     </LinearLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:text="- 없이 숫자만 입력"
+        android:textColor="#FF4F4F"/>
     <EditText
         android:id="@+id/edtPhoneNum"
         android:layout_width="match_parent"
