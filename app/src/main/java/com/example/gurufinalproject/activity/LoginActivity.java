@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.activity.administrator.AdministratorMainActivity;
 import com.example.gurufinalproject.bean.MemberBean;
 import com.example.gurufinalproject.db.FileDB;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -34,7 +35,7 @@ import java.util.List;
 public class LoginActivity extends AppCompatActivity {
     //구글 로그인 클라이언트 제어자
     private GoogleSignInClient mGoogleSignInClient;
-
+    private Boolean student = true;
     //FireBase 인증 객체
     private FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
 
@@ -82,21 +83,21 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(getBaseContext(),"구글로그인에 성공하셨습니다.",Toast.LENGTH_SHORT).show();
 
                 MemberBean findMember = FileDB.getFindMember(this,account.getEmail());
-                if(findMember != null){
+                MemberBean findAdmin = FileDB.getFindAdmin(this,account.getEmail());
+                if(findMember != null ){
                     //FireBase 인증하러가기
                     fireBaseAuthWithGoogle(account);
                     Toast.makeText(getBaseContext(),"firebase 학생 성공",Toast.LENGTH_SHORT).show();
                 }else{
-                    findMember = FileDB.getFindAdmin(this,account.getEmail());
-                    if(findMember != null){
+                    if(findAdmin != null){
                         //FireBase 인증하러가기
                         fireBaseAuthWithGoogle(account);
                         Toast.makeText(getBaseContext(),"firebase 관리자 성공",Toast.LENGTH_SHORT).show();
+                        student =false;
                     }else{
                         Toast.makeText(getBaseContext(),"해당 아이디는 가입이 되어있지 않습니다.",Toast.LENGTH_SHORT).show();
                     }
                 }
-
             }catch(ApiException e){
                 e.printStackTrace();
             }
@@ -110,11 +111,16 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     //FireBase 로그인 성공
-                    Toast.makeText(getBaseContext(),"FireBase 로그인 성공",Toast.LENGTH_SHORT).show();
-
+                    //Toast.makeText(getBaseContext(),"FireBase 로그인 성공",Toast.LENGTH_SHORT).show();
                     //메인 화면으로 이동한다.
-
-
+                    if(student == false){
+                        Intent i = new Intent(getBaseContext(), AdministratorMainActivity.class);
+                        startActivity(i);
+                        student = true;
+                    }else{
+                        Intent i = new Intent(getBaseContext(), MemberMainActivity.class);
+                        startActivity(i);
+                    }
                 }else{
                     //로그인 실패
                     Toast.makeText(getBaseContext(),"FireBase 로그인 실패",Toast.LENGTH_SHORT).show();

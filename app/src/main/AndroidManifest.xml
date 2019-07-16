@@ -18,6 +18,7 @@
         <activity android:name=".activity.MemberJoinActivity" />
         <activity android:name=".activity.SelectLoginActivity" />
         <activity android:name=".activity.MemberMainActivity" />
+        <activity android:name=".activity.administrator.AdministratorMainActivity"/>
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
