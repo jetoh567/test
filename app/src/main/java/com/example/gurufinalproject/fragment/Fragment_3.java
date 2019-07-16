@@ -33,6 +33,8 @@ public class Fragment_3 extends Fragment {
                             @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_3, container, false);
 
+        // 전화걸기 버튼
+        // 글작성 버튼
         //view.findViewById(R.id)
 
         return view;
