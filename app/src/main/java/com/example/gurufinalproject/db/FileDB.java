@@ -119,5 +119,21 @@ public class FileDB {
         return getFindMember(context, memberBean.userid);
     }
 
+    //로그인한 MemberBean 을 저장한다.
+    public static void setLoginAdmin(Context context, MemberBean bean) {
+        if(bean != null) {
+            String str = mGson.toJson(bean);
+            SharedPreferences.Editor editor = getSP(context).edit();
+            editor.putString("loginAdminBean", str);
+            editor.commit();
+        }
+    }
 
+    //로그인한 MemberBean 을 취득한다.
+    public static MemberBean getLoginAdmin(Context context) {
+        String str = getSP(context).getString("loginAdminBean", null);
+        if(str == null) return null;
+        MemberBean memberBean = mGson.fromJson(str, MemberBean.class);
+        return getFindAdmin(context, memberBean.userid);
+    }
 }

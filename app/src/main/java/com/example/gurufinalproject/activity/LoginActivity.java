@@ -82,6 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                     //FireBase 인증하러가기
                     fireBaseAuthWithGoogle(account);
                     Toast.makeText(getBaseContext(),"firebase 학생 성공",Toast.LENGTH_SHORT).show();
+                    FileDB.setLoginMember(this, findMember);
                 }else{
                     if(findAdmin != null){
                         //FireBase 인증하러가기

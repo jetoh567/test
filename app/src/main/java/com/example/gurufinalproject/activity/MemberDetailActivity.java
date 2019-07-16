@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.Sampler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -27,9 +28,9 @@ public class MemberDetailActivity extends AppCompatActivity {
 
         MemberBean memberBean = FileDB.getLoginMember(getApplicationContext());
 
-        txtMemName.setText(memberBean.name);
-        txtMemId.setText(memberBean.userid);
-        txtMemNum.setText(memberBean.userNum);
+        txtMemName.setText("이름 : " + memberBean.name);
+        txtMemId.setText("이메일 : " + memberBean.userid);
+        txtMemNum.setText("학번 : " + memberBean.userNum );
 
         Button btnMemWrite = findViewById(R.id.btnMemWrite);
         btnMemWrite.setOnClickListener(new View.OnClickListener() {

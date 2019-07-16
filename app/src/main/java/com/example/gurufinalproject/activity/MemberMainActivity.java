@@ -34,6 +34,7 @@ public class MemberMainActivity extends AppCompatActivity {
                 case R.id.btn_info:
                     Intent i = new Intent(getBaseContext(),MemberDetailActivity.class);
                     startActivity(i);
+                    finish();
                     break;
 
 
