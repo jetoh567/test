@@ -101,4 +101,12 @@ public class FileDB {
         //3-2.못찾았을 경우는??? null 리턴
         return null;
     }
+
+    //로그인한 MemberBean 을 취득한다.
+    public static MemberBean getLoginMember(Context context) {
+        String str = getSP(context).getString("loginMemberBean", null);
+        if(str == null) return null;
+        MemberBean memberBean = mGson.fromJson(str, MemberBean.class);
+        return getFindMember(context, memberBean.userid);
+    }
 }
