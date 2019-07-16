@@ -28,11 +28,6 @@ public class MemberMainActivity extends AppCompatActivity {
                     startActivity(i);
                     break;
 
-                case R.id.btn_2:
-                    Intent i1 = new Intent(getBaseContext(), Fragment_2.class);
-                    startActivity(i1);
-                    break;
-
 
             }
         }
