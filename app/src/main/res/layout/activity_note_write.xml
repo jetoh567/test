@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.NoteDetailActivity"
+    android:orientation="vertical"
+    android:weightSum="10">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="제목을 입력하세요."
+        android:layout_gravity="center"
+        android:textSize="40dp"
+        android:layout_marginTop="20dp"/>
+
+    <CheckBox
+        android:id="@+id/agree1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="허위를 유포하시면 안됩니다."
+        android:layout_weight="0.5"
+        android:layout_gravity="center"
+        android:textSize="15dp"
+        android:layout_marginTop="20dp"/>
+
+    <CheckBox
+        android:id="@+id/agree2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="정확한 사실을 입력해주세요."
+        android:layout_weight="0.5"
+        android:layout_gravity="center"
+        android:textSize="15dp"/>
+
+    <ImageView
+        android:id="@+id/imgPic"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_weight="2"
+        tools:srcCompat="@tools:sample/avatars[3]"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="첨부파일"
+        android:layout_gravity="center"/>
+
+    <EditText
+        android:id="@+id/EdtWriting"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:hint="신고내용을 작성해주세요."
+        android:textSize="20dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/btnWirte"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="글작성" />
+
+</LinearLayout>
