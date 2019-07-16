@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -92,6 +93,7 @@ public class Fragment_2 extends Fragment {
             TextView noteTitle = convertView.findViewById(R.id.noteTitle);
             TextView noteDetail = convertView.findViewById(R.id.noteDetail);
             TextView noteWriter = convertView.findViewById(R.id.noteWriter);
+            Button btnDetail = convertView.findViewById(R.id.btnDetail);
 
             // i번째 객체 획득
             final NoteBean note = noteList.get(position);
