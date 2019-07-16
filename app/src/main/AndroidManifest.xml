@@ -18,7 +18,7 @@
         <activity android:name=".activity.AdminJoinActivity" />
         <activity android:name=".activity.MemberJoinActivity" />
         <activity android:name=".activity.SelectLoginActivity" />
-        <activity android:name=".activity.MemberMainActivity" />
+        <activity android:name=".activity.MemberDetailActivity" />
         <activity android:name=".activity.administrator.AdministratorMainActivity"/>
         <activity android:name=".activity.LoginActivity">
             <intent-filter>

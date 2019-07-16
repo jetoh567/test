@@ -5,7 +5,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,11 +25,6 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
-
-import java.io.File;
-import java.io.FileDescriptor;
-import java.lang.reflect.Member;
-import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     //구글 로그인 클라이언트 제어자
@@ -118,7 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(i);
                         student = true;
                     }else{
-                        Intent i = new Intent(getBaseContext(), MemberMainActivity.class);
+                        Intent i = new Intent(getBaseContext(), MemberDetailActivity.class);
                         startActivity(i);
                     }
                 }else{
