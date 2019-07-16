@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.gurufinalproject.R;
 
-public class MemberMainActivity extends AppCompatActivity {
+public class MemberDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_member_main);
+        setContentView(R.layout.activity_member_detail);
     }
 }
