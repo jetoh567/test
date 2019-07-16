@@ -20,7 +20,7 @@ public class AdminJoinActivity extends AppCompatActivity implements AdapterView.
 
     private String userid;
     private EditText edtName, edtPhone;
-    private long userNum ;
+    private int userNum ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +34,7 @@ public class AdminJoinActivity extends AppCompatActivity implements AdapterView.
 
         department.setAdapter(adapter);
         department.setOnItemSelectedListener(this);
+
         userid = getIntent().getStringExtra("AdminID");
         edtName = findViewById(R.id.edtName);
         edtPhone = findViewById(R.id.edtPhoneNum);
@@ -79,7 +80,7 @@ public class AdminJoinActivity extends AppCompatActivity implements AdapterView.
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-       userNum = adapterView.getItemIdAtPosition(i);
+    userNum = i;
     }
 
     @Override
