@@ -5,4 +5,5 @@ public class MemberBean {
     public String userid;
     public int userNum;
     public String phoneNum;
+    public String Department;
 }
