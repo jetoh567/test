@@ -33,7 +33,7 @@
         android:padding="40dp">
 
         <TextView
-            android:id="@+id/txtMemName"
+            android:id="@+id/txtAdminName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -41,7 +41,7 @@
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/txtMemPart"
+            android:id="@+id/txtAdminPart"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -49,7 +49,7 @@
             android:textSize="20dp" />
 
         <TextView
-            android:id="@+id/txtMemNum"
+            android:id="@+id/txtAdminNum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
@@ -64,12 +64,12 @@
             android:layout_marginTop="20dp">
 
             <Button
-                android:id="@+id/btnLogout"
+                android:id="@+id/btnAdminLogout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="로그아웃" />
             <Button
-                android:id="@+id/btnDrop"
+                android:id="@+id/btnAdminView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="신고글 확인하기" />
