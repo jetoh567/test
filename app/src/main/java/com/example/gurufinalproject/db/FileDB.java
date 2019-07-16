@@ -101,6 +101,15 @@ public class FileDB {
         //3-2.못찾았을 경우는??? null 리턴
         return null;
     }
+    //로그인한 MemberBean 을 저장한다.
+    public static void setLoginMember(Context context, MemberBean bean) {
+        if(bean != null) {
+            String str = mGson.toJson(bean);
+            SharedPreferences.Editor editor = getSP(context).edit();
+            editor.putString("loginMemberBean", str);
+            editor.commit();
+        }
+    }
 
     //로그인한 MemberBean 을 취득한다.
     public static MemberBean getLoginMember(Context context) {
@@ -109,4 +118,6 @@ public class FileDB {
         MemberBean memberBean = mGson.fromJson(str, MemberBean.class);
         return getFindMember(context, memberBean.userid);
     }
+
+
 }
