@@ -112,7 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(i);
                         student = true;
                     }else{
-                        Intent i = new Intent(getBaseContext(), MemberDetailActivity.class);
+                        Intent i = new Intent(getBaseContext(), MemberMainActivity.class);
                         startActivity(i);
                     }
                 }else{

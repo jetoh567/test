@@ -13,14 +13,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MyNoteViewActivity"></activity>
+        <activity android:name=".activity.MemberMainActivity"></activity>
+        <activity android:name=".activity.MyNoteViewActivity" />
         <activity android:name=".activity.NoteWriteActivity" />
         <activity android:name=".activity.NoteDetailActivity" />
         <activity android:name=".activity.AdminJoinActivity" />
         <activity android:name=".activity.MemberJoinActivity" />
         <activity android:name=".activity.SelectLoginActivity" />
         <activity android:name=".activity.MemberDetailActivity" />
-        <activity android:name=".activity.administrator.AdministratorMainActivity"/>
+        <activity android:name=".activity.administrator.AdministratorMainActivity" />
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
