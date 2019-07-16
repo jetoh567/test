@@ -32,20 +32,20 @@
             android:orientation="horizontal"
             >
             <Button
-                android:id="@+id/btn_1"
+                android:id="@+id/btn_outsider"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:text="외부침입"/>
 
             <Button
-                android:id="@+id/btn_2"
+                android:id="@+id/btn_public"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:text="공공기물"/>
             <Button
-                android:id="@+id/btn_3"
+                android:id="@+id/btn_animal"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
@@ -56,39 +56,39 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/btn_4"
+                android:id="@+id/btn_lost"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:text="분실물"/>
 
             <Button
-                android:id="@+id/btn_5"
+                android:id="@+id/btn_else"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:text="기타"/>
             <Button
-                android:id="@+id/btn_6"
+                android:id="@+id/btn_emergency"
                 android:layout_width="0dp"
                 android:layout_weight="3"
                 android:layout_height="wrap_content"
                 android:text="긴급전화"/>
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/btn_7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
             <Button
-                android:id="@+id/btn_8"
+                android:id="@+id/btn_info"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:text="내 정보"/>
 
             <Button
+                android:id="@+id/btn_mylist"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"

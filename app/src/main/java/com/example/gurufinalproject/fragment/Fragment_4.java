@@ -35,7 +35,7 @@ public class Fragment_4 extends Fragment {
     public View onCreateView(@Nullable LayoutInflater inflater, @Nullable ViewGroup container,
                             @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_4, container, false);
-
+        mLstNote = view.findViewById(R.id.lstNote);
         // 글작성 버튼
         view.findViewById(R.id.btnWrite).setOnClickListener(new View.OnClickListener() {
             @Override

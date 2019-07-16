@@ -16,14 +16,14 @@ public class MemberMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_member_main);
 
-        findViewById(R.id.btn_menu).setOnClickListener(mBtnClick);
+        findViewById(R.id.btn_info).setOnClickListener(mBtnClick);
     }
 
     View.OnClickListener mBtnClick = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             switch (view.getId()){
-                case R.id.btn_menu:
+                case R.id.btn_info:
                     Intent i = new Intent(getBaseContext(),MemberDetailActivity.class);
                     startActivity(i);
                     break;
