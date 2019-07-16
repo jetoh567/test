@@ -48,5 +48,14 @@ public class MemberDetailActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        Button btnMemView = findViewById(R.id.btnMemView);
+        btnMemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MemberDetailActivity.this, MyNoteViewActivity.class);
+                startActivity(i);
+            }
+        });
     } // end Oncreate
 } // end class
