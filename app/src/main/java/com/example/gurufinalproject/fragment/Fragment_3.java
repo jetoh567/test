@@ -15,10 +15,12 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.activity.NoteWriteActivity;
 import com.example.gurufinalproject.bean.NoteBean;
 
 import java.util.ArrayList;
@@ -47,11 +49,20 @@ public class Fragment_3 extends Fragment {
             }
         });
         // 글작성 버튼
+            view.findViewById(R.id.btnWrite).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(getActivity(), NoteWriteActivity.class);
+                    startActivityForResult(intent, Saved);
+                }
+            });
 
-        // 메인페이지로 가는 버튼
+            mLstNote = view.findViewById(R.id.lstNote_1);
 
-        return view;
-    }// end Oncreate
+            return view;
+            // 메인페이지로 가는 버튼
+        }// end Oncreate
+
 
     @Override
     public void onResume() {

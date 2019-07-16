@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.fragment.Fragment_2;
 
 public class MemberMainActivity extends AppCompatActivity {
 
@@ -26,6 +27,8 @@ public class MemberMainActivity extends AppCompatActivity {
                     Intent i = new Intent(getBaseContext(),MemberDetailActivity.class);
                     startActivity(i);
                     break;
+
+
             }
         }
     };
