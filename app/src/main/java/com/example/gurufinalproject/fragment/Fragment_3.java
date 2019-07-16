@@ -36,6 +36,7 @@ public class Fragment_3 extends Fragment {
                             @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_3, container, false);
 
+        mLstNote = view.findViewById(R.id.lstNote);
         // 전화걸기 버튼
         Button btnCall = view.findViewById(R.id.btnCall);
         btnCall.setOnClickListener(new View.OnClickListener() {

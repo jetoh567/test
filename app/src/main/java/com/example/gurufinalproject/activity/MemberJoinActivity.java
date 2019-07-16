@@ -3,6 +3,7 @@ package com.example.gurufinalproject.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -55,7 +56,15 @@ public class MemberJoinActivity extends AppCompatActivity {
             Toast.makeText(this,"학번을 입력해주세요.",Toast.LENGTH_SHORT).show();
             return;
         }
-        memberBean.userNum = Integer.parseInt(userNum);
+
+        try {
+            memberBean.userNum =Integer.parseInt(userNum);
+        }catch (Exception e){
+            e.printStackTrace();
+            Toast.makeText(this,"학번을 제대로 입력해주세요.",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
 
         phone = edtPhone.getText().toString();
         if(phone.equals("")){
