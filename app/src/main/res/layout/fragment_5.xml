@@ -16,7 +16,12 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="옆에 상기된 항목들 외의 신고들을 접수해주세요."
+        android:text="아래에 표기된 항목들 \n외의 신고들을 접수해주세요."
+        android:textSize="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="외부칩입, 공공기물파손, 야생동물목격, 분실물접수"
         android:textSize="20dp"/>
 
     <ListView
