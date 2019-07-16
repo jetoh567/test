@@ -1,8 +1,10 @@
 package com.example.gurufinalproject.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,10 +37,17 @@ public class Fragment_3 extends Fragment {
         View view = inflater.inflate(R.layout.fragment_3, container, false);
 
         // 전화걸기 버튼
+        Button btnCall = view.findViewById(R.id.btnCall);
+        btnCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:029701000"));
+                startActivity(i);
+            }
+        });
         // 글작성 버튼
 
         // 메인페이지로 가는 버튼
-        //view.findViewById(R.id)
 
         return view;
     }// end Oncreate
