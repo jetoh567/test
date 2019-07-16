@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.NoteWriteActivity"></activity>
+        <activity android:name=".activity.MyNoteViewActivity"></activity>
+        <activity android:name=".activity.NoteWriteActivity" />
         <activity android:name=".activity.NoteDetailActivity" />
         <activity android:name=".activity.AdminJoinActivity" />
         <activity android:name=".activity.MemberJoinActivity" />
