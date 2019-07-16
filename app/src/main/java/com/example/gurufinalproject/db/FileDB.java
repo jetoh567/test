@@ -8,7 +8,6 @@ import com.example.gurufinalproject.bean.MemberBean;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Member;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,22 +100,5 @@ public class FileDB {
         }
         //3-2.못찾았을 경우는??? null 리턴
         return null;
-    }
-
-    //로그인한 MemberBean 을 저장한다.
-    public static void setLoginMember(Context context, MemberBean bean) {
-        if(bean != null) {
-            String str = mGson.toJson(bean);
-            SharedPreferences.Editor editor = getSP(context).edit();
-            editor.putString("loginMemberBean", str);
-            editor.commit();
-        }
-    }
-
-    public static MemberBean getLoginMember(Context context) {
-        String str = getSP(context).getString("loginMemberBean",null);
-        if(str == null) return null;
-        MemberBean memberBean = mGson.fromJson(str, MemberBean.class);
-        return getFindMember(context, memberBean.userid);
     }
 }

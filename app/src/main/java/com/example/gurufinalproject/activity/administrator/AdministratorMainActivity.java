@@ -1,55 +1,52 @@
 package com.example.gurufinalproject.activity.administrator;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.bean.MemberBean;
+import com.example.gurufinalproject.db.FileDB;
 
 public class AdministratorMainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       setContentView(R.layout.activity_administrator_main);
+        setContentView(R.layout.activity_administrator_main);
+        TextView txtAdminName = findViewById(R.id.txtAdminName);
+        TextView txtAdminPart = findViewById(R.id.txtAdminPart);
+        TextView txtAdminNum = findViewById(R.id.txtAdminNum);
+
+        MemberBean memberBean = FileDB.getLoginAdmin(this);
+
+        txtAdminName.setText("이름 : " + memberBean.name);
+        String department ="" ;
+        switch(memberBean.userNum){
+            case 0:
+                department = "상황실";
+                break;
+            case 1:
+                department = "학생 지원실";
+                break;
+            case 2:
+                department = "기관실";
+                break;
+            case 3:
+                department = "경비실";
+                break;
+        }
+        txtAdminPart.setText("근무부서 : " + department);
+        txtAdminNum.setText("연락처 : " +memberBean.phoneNum);
+
+        findViewById(R.id.btnAdminLogout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
-
-//    @Nullable
-//    @Override
-//    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//
-//        View view = inflater.inflate(R.layout.activity_administrator_main,container,false);
-//
-//        TextView txtMemName = view.findViewById(R.id.txtMemName);
-//        TextView txtMemPart = view.findViewById(R.id.txtMemPart);
-//        TextView txtMemNum = view.findViewById(R.id.txtMemNum);
-//
-//        MemberBean memberBean = FileDB.getLoginMember(getActivity());
-//
-//        txtMemName.setText("이름 : " +memberBean.memName);
-//        txtMemPart.setText("근무부서 : " + memberBean.mempass);
-//        txtMemNum.setText("연락처 : " +memberBean.memName);
-//        txtMemDate.setText("가입날짜 " + memberBean.memDate);
-//
-//        view.findViewById(R.id.btnLogout).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getActivity().finish();
-//
-//            }
-//        });
-//
-//        return view;
-//    }
-
-
 }

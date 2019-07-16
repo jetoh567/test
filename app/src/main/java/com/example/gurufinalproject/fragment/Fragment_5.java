@@ -1,6 +1,7 @@
 package com.example.gurufinalproject.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.activity.NoteWriteActivity;
 import com.example.gurufinalproject.bean.NoteBean;
 
 import java.util.ArrayList;
@@ -37,7 +39,14 @@ public class Fragment_5 extends Fragment {
         mLstNote = view.findViewById(R.id.lstNote);
 
         // 글작성 버튼
-        //view.findViewById(R.id)
+        // 글작성 버튼
+        view.findViewById(R.id.btnWrite).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), NoteWriteActivity.class);
+                startActivityForResult(intent, Saved);
+            }
+        });
 
         // 메인페이지로 가는 버튼
 
