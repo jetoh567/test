@@ -25,17 +25,24 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fragment_1 extends Fragment {
-    private ListView mLstNote;
-    public final static int Saved = 1004;
+    private TextView title, sub, detail;
 
     @Nullable
     @Override
     public View onCreateView(@Nullable LayoutInflater inflater, @Nullable ViewGroup container,
                             @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_1, container, false);
+        View view = inflater.inflate(R.layout.fragment_call, container, false);
 
         // 전화걸기 버튼
-        Button btnCall = view.findViewById(R.id.btnCall);
+        Button btnCall = view.findViewById(R.id.btnCallC);
+        title = view.findViewById(R.id.txtTitleC);
+        sub = view.findViewById(R.id.txtSubTitleC);
+        detail = view.findViewById(R.id.txtDetailC);
+
+        title.setText("외부칩입 관련 \n신고페이지 입니다.");
+        sub.setText("교내에서 신원이 불분명하거나 \n수상한 행동을 하는 외부인을 \n목격 및 발견 했을 경우 신고해주십시오.");
+        detail.setText("전화를 걸 경우, \n02-970-1000 번으로 연락이 갑니다. \n종합상황실에서 빠르게 대응할 것 입니다.");
+
         btnCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,7 +50,6 @@ public class Fragment_1 extends Fragment {
                 startActivity(intent);
             }
         });
-        // 메인페이지로 가는 버튼
 
         return view;
     }// end Oncreate

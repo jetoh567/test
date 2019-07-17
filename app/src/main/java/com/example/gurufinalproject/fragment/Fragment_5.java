@@ -20,110 +20,22 @@ import androidx.fragment.app.Fragment;
 import com.example.gurufinalproject.R;
 import com.example.gurufinalproject.activity.NoteWriteActivity;
 import com.example.gurufinalproject.bean.NoteBean;
+import com.example.gurufinalproject.db.FileDB;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Fragment_5 extends Fragment {
-    private ListView mLstNote;
-    public ListAdapter adapter;
-    public List<NoteBean> noteList = new ArrayList<>();
-    public final static int Saved = 1004;
+
 
     @Nullable
     @Override
     public View onCreateView(@Nullable LayoutInflater inflater, @Nullable ViewGroup container,
                             @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_5, container, false);
-
-        mLstNote = view.findViewById(R.id.lstNote);
-
-        // 글작성 버튼
-        // 글작성 버튼
-        view.findViewById(R.id.btnWrite).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), NoteWriteActivity.class);
-                startActivityForResult(intent, Saved);
-            }
-        });
-
-        // 메인페이지로 가는 버튼
+        View view = inflater.inflate(R.layout.fragment_detail, container, false);
 
         return view;
     }// end Oncreate
 
-    @Override
-    public void onResume() {
-        super.onResume();
 
-        //noteList;
-        // adapter 생성 및 적용
-        adapter = new ListAdapter(noteList,getContext());
-        // list view에 adapter 설정
-        mLstNote.setAdapter(adapter);
-    }
-
-    class ListAdapter extends BaseAdapter {
-       List<NoteBean> noteList;
-       Context mContext;
-       LayoutInflater inflater;
-
-        public ListAdapter(List<NoteBean> noteList, Context context) {
-            this.noteList = noteList;
-            this.mContext = context;
-            this.inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        }
-
-        public void setNoteList(List<NoteBean> noteList) {
-            this.noteList = noteList;
-        }
-
-        @Override
-        public int getCount() {
-            return noteList.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return noteList.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(final int position, View convertView, ViewGroup parent) {
-            convertView = inflater.inflate(R.layout.note_form,null);
-
-            // 객체획득
-            ImageView noteImage = convertView.findViewById(R.id.noteImage);
-            TextView noteTitle = convertView.findViewById(R.id.noteTitle);
-            TextView noteDetail = convertView.findViewById(R.id.noteDetail);
-            TextView noteWriter = convertView.findViewById(R.id.noteWriter);
-            Button btnDetail = convertView.findViewById(R.id.btnDetail);
-
-            // i번째 객체 획득
-            final NoteBean note = noteList.get(position);
-
-            // ui에 적용
-            Bitmap bitmap = BitmapFactory.decodeFile(note.notePicPath);
-            Bitmap resizeBmp = getResizedBitmap(bitmap, 4, 100, 100);
-            noteImage.setImageBitmap(resizeBmp);
-            noteTitle.setText(note.noteTitle);
-            noteDetail.setText(note.noteDetail);
-            noteWriter.setText(note.noteWriter);
-
-            return convertView;
-        }
-    }
-
-    public static Bitmap getResizedBitmap(Bitmap srcBmp, int size, int width, int height) {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = size;
-        Bitmap resized = Bitmap.createScaledBitmap(srcBmp, width, height, true);
-        return resized;
-    }
 }// end class

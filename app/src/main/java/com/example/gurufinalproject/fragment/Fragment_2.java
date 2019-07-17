@@ -2,8 +2,6 @@ package com.example.gurufinalproject.fragment;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -15,13 +13,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.gurufinalproject.R;
 import com.example.gurufinalproject.activity.NoteWriteActivity;
 import com.example.gurufinalproject.bean.NoteBean;
+import com.example.gurufinalproject.db.FileDB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,28 +28,34 @@ public class Fragment_2 extends Fragment {
     private ListView mLstNote;
     public ListAdapter adapter;
     public List<NoteBean> noteList = new ArrayList<>();
-    public final static int Saved = 1004;
+    private TextView title, sub, detail;
 
     @Nullable
     @Override
 
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_2, container, false);
+        View view = inflater.inflate(R.layout.fragment_write, container, false);
 
-        mLstNote = view.findViewById(R.id.lstNote);
         // 글작성 버튼
-        view.findViewById(R.id.btnWrite).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.btnWriteW).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), NoteWriteActivity.class);
-                startActivityForResult(intent, Saved);
+                startActivity(intent);
             }
         });
 
-        mLstNote = view.findViewById(R.id.lstNote_1);
+        mLstNote = view.findViewById(R.id.lstNoteW);
+
+        title = view.findViewById(R.id.txtTitleW);
+        sub = view.findViewById(R.id.txtSubTitleW);
+        detail = view.findViewById(R.id.txtDetailW);
+
+        title.setText("공공기물훼손 관련 신고페이지 입니다.");
+        sub.setText("교내 강의실을 비롯해 이용가능한 공공시설물이 고장, 훼손, 파손 되었을 경우 신고해주십시오. 이용이 불편한 시설물의 위치와 고장사항을 구체적으로 적어주시기 바랍니다.");
+        detail.setText("기자재실에서 검토후 빠른 조취를 취할 것 입니다.");
 
         return view;
-        // 메인페이지로 가는 버튼
     }// end Oncreate
 
 
@@ -59,17 +63,17 @@ public class Fragment_2 extends Fragment {
     public void onResume() {
         super.onResume();
 
-        //noteList;
-        // adapter 생성 및 적용
+        noteList = FileDB.getNoteList(getContext());
+
         adapter = new ListAdapter(noteList, getContext());
         // list view에 adapter 설정
         mLstNote.setAdapter(adapter);
     }
-}
+
     class ListAdapter extends BaseAdapter {
-       List<NoteBean> noteList;
-       Context mContext;
-       LayoutInflater inflater;
+        List<NoteBean> noteList;
+        Context mContext;
+        LayoutInflater inflater;
 
         public ListAdapter(List<NoteBean> noteList, Context context) {
             this.noteList = noteList;
@@ -97,35 +101,26 @@ public class Fragment_2 extends Fragment {
         }
 
         @Override
-        public View getView(final int position, View convertView, ViewGroup parent) {
-            convertView = inflater.inflate(R.layout.note_form,null);
+        public View getView(int i, View view, ViewGroup viewGroup) {
+           /* view = inflater.inflate(R.layout.note_form,null);
 
             // 객체획득
-            ImageView noteImage = convertView.findViewById(R.id.noteImage);
-            TextView noteTitle = convertView.findViewById(R.id.noteTitle);
-            TextView noteDetail = convertView.findViewById(R.id.noteDetail);
-            TextView noteWriter = convertView.findViewById(R.id.noteWriter);
-            Button btnDetail = convertView.findViewById(R.id.btnDetail);
+            TextView noteTitle = view.findViewById(R.id.noteTitle);
+            TextView noteDetail = view.findViewById(R.id.noteDetail);
+            TextView noteWriter = view.findViewById(R.id.noteWriter);
 
             // i번째 객체 획득
-            final NoteBean note = noteList.get(position);
+            final NoteBean note = noteList.get(i);
 
             // ui에 적용
-            Bitmap bitmap = BitmapFactory.decodeFile(note.notePicPath);
-            Bitmap resizeBmp = getResizedBitmap(bitmap, 4, 100, 100);
-            noteImage.setImageBitmap(resizeBmp);
+
             noteTitle.setText(note.noteTitle);
             noteDetail.setText(note.noteDetail);
             noteWriter.setText(note.noteWriter);
 
-            return convertView;
+            return view;*/
+            return null;
         }
-
-
-    public static Bitmap getResizedBitmap(Bitmap srcBmp, int size, int width, int height) {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = size;
-        Bitmap resized = Bitmap.createScaledBitmap(srcBmp, width, height, true);
-        return resized;
-    }
-}// end class
+    }}
+   
+// end class

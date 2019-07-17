@@ -21,7 +21,7 @@
         <activity android:name=".activity.MemberJoinActivity" />
         <activity android:name=".activity.SelectLoginActivity" />
         <activity android:name=".activity.MemberDetailActivity" />
-        <activity android:name=".activity.NotifyActivity" />
+        <activity android:name=".activity.NotifyActivity"/>
         <activity android:name=".activity.administrator.AdministratorMainActivity" />
         <activity android:name=".activity.administrator.CheckCommunalPropertyActivity" />
         <activity android:name=".activity.administrator.CheckLostArticleActivity" />
