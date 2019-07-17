@@ -116,15 +116,15 @@ public class LoginActivity extends AppCompatActivity {
                         if(memberBean.userNum == 0){
                             Intent i = new Intent(getBaseContext(), AdminNoticeActivity.class);
                             startActivity(i);
-                            student = true;
                         }
                         else{
                             Intent i = new Intent(getBaseContext(), AdminCheckWritingActivity.class);
                             startActivity(i);
-                            student = true;
                         }
+
+                        student = true;
                     }else{
-                        Intent i = new Intent(getBaseContext(), MemberMainActivity.class);
+                        Intent i = new Intent(getBaseContext(),MemberNavigationActivity.class);
                         startActivity(i);
                     }
                 }else{

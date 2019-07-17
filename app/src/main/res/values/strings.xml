@@ -1,9 +1,13 @@
 <resources>
     <string name="app_name">GuruFinalProject</string>
+
     <string-array name="departments">
         <item>상황실</item>
         <item>학생 지원실</item>
         <item>기관실</item>
         <item>경비실</item>
     </string-array>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
