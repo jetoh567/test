@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="공공기물 훼손 신고"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:padding="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="교내 강의실을 비롯한 공공시설물의 고장, \n훼손, 파손을 발견했을 경우 신고해주십시오. \n이용이 불편한 시설물의 위치와 고장사항을 \n구체적으로 적어주시기 바랍니다."
+        android:textSize="18dp"
+        android:padding="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="기자재실에서 검토후 빠른 조취를 취할 것 입니다."
+        android:textSize="15dp"
+        android:padding="10dp"/>
+
+    <ListView
+        android:id="@+id/lstNote2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></ListView>
+
+</LinearLayout>

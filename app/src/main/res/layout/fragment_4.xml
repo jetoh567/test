@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="분실물 신고"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:padding="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="교내에서 분실물을 발견했을 경우 신고해주십시오. \n분실물의 발견 위치를 \n구체적으로 적어주시기 바랍니다."
+        android:textSize="17dp"
+        android:padding="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="발견한 분실물은 학생지원팀으로 전달해주세요.\n(학생 누리관 2층)\n학생지원팀에서 검토후 조취를 취할 것 입니다."
+        android:textSize="15dp"
+        android:padding="10dp"/>
+
+    <ListView
+        android:id="@+id/lstNote4"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></ListView>
+
+</LinearLayout>

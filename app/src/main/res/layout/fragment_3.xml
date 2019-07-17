@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="야생동물 신고"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:padding="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="교내에서 야생멧돼지, 고라니를 비롯한 \n야생동물을 목격했을 경우 신고해주십시오. \n야생동물을 목격한 위치를 구체적으로 \n적어주시기 바랍니다."
+        android:textSize="18dp"
+        android:padding="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메인 페이지에서 전화를 걸 경우, \n02-970-1000 번으로 연락이 갑니다. \n종합상황실에서 검토후 빠르게 대응할 것 입니다."
+        android:textSize="15dp"
+        android:padding="10dp"/>
+
+    <ListView
+        android:id="@+id/lstNote3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"></ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btnWrite3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="신고글 작성"/>
+
+    </LinearLayout>
+
+</LinearLayout>
