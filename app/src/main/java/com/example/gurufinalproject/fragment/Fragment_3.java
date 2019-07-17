@@ -27,42 +27,24 @@ public class Fragment_3 extends Fragment {
     private ListView mLstNote;
     public ListAdapter adapter;
     public List<NoteBean> noteList = new ArrayList<>();
-    private TextView title, sub, detail;
+
 
     @Nullable
     @Override
     public View onCreateView(@Nullable LayoutInflater inflater, @Nullable ViewGroup container,
                             @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_both, container, false);
+        View view = inflater.inflate(R.layout.fragment_3, container, false);
 
-        mLstNote = view.findViewById(R.id.lstNoteB);
-
-        title = view.findViewById(R.id.txtTitleB);
-        sub = view.findViewById(R.id.txtSubTitleB);
-        detail = view.findViewById(R.id.txtdetailB);
-
-        // 전화걸기 버튼
-        Button btnCall = view.findViewById(R.id.btnCallB);
-        btnCall.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:029701000"));
-                startActivity(i);
-            }
-        });
+        mLstNote = view.findViewById(R.id.lstNote3);
 
         // 글작성 버튼
-            view.findViewById(R.id.btnWriteB).setOnClickListener(new View.OnClickListener() {
+            view.findViewById(R.id.btnWrite3).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(getActivity(), NoteWriteActivity.class);
                     startActivity(intent);
                 }
             });
-
-            title.setText("야생동물 관련 \n신고페이지 입니다.");
-            sub.setText("교내에서 야생멧돼지나 \n고라니를 비롯한 야생동물을 \n목격했을 경우 신고해주십시오. \n야생동물을 목격한 위치를 구체적으로 적어주시기 바랍니다.");
-            detail.setText("전화를 걸 경우, \n02-970-1000 번으로 연락이 갑니다. \n종합상황실에서 검토후 빠르게 대응할 것 입니다.");
 
             return view;
             // 메인페이지로 가는 버튼
