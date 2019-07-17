@@ -11,7 +11,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.gurufinalproject.R;
-import com.example.gurufinalproject.activity.administrator.AdministratorMainActivity;
+import com.example.gurufinalproject.activity.administrator.AdminCheckWritingActivity;
+import com.example.gurufinalproject.activity.administrator.AdminNoticeActivity;
 import com.example.gurufinalproject.bean.MemberBean;
 import com.example.gurufinalproject.db.FileDB;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -110,9 +111,18 @@ public class LoginActivity extends AppCompatActivity {
                     //Toast.makeText(getBaseContext(),"FireBase 로그인 성공",Toast.LENGTH_SHORT).show();
                     //메인 화면으로 이동한다.
                     if(student == false){
-                        Intent i = new Intent(getBaseContext(), AdministratorMainActivity.class);
-                        startActivity(i);
-                        student = true;
+                        MemberBean memberBean = FileDB.getLoginAdmin(getApplicationContext());
+
+                        if(memberBean.userNum == 0){
+                            Intent i = new Intent(getBaseContext(), AdminNoticeActivity.class);
+                            startActivity(i);
+                            student = true;
+                        }
+                        else{
+                            Intent i = new Intent(getBaseContext(), AdminCheckWritingActivity.class);
+                            startActivity(i);
+                            student = true;
+                        }
                     }else{
                         Intent i = new Intent(getBaseContext(), MemberMainActivity.class);
                         startActivity(i);

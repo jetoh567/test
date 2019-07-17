@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permisson.CALL_PHONE"/>
+    <uses-permission android:name="android.permisson.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MemberMainActivity"></activity>
+        <activity android:name=".activity.administrator.NoticeDetailActivity"></activity>
+        <activity android:name=".activity.administrator.NoticeWriteActivity" />
+        <activity android:name=".activity.administrator.AdminNoticeActivity" />
+        <activity android:name=".activity.administrator.AdminCheckWritingActivity" />
+        <activity android:name=".activity.MemberMainActivity" />
         <activity android:name=".activity.MyNoteViewActivity" />
         <activity android:name=".activity.NoteWriteActivity" />
         <activity android:name=".activity.NoteDetailActivity" />
@@ -22,11 +26,6 @@
         <activity android:name=".activity.SelectLoginActivity" />
         <activity android:name=".activity.MemberDetailActivity" />
         <activity android:name=".activity.NotifyActivity" />
-        <activity android:name=".activity.administrator.AdministratorMainActivity" />
-        <activity android:name=".activity.administrator.CheckCommunalPropertyActivity" />
-        <activity android:name=".activity.administrator.CheckLostArticleActivity" />
-        <activity android:name=".activity.administrator.CheckOutsiderActivity" />
-        <activity android:name=".activity.administrator.CheckWildAnimalActivity" />
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
