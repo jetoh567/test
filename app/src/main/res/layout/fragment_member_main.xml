@@ -58,12 +58,6 @@
                 android:text="분실물"/>
 
             <Button
-                android:id="@+id/btn_else"
-                android:layout_width="0dp"
-                android:layout_weight="3"
-                android:layout_height="wrap_content"
-                android:text="기타"/>
-            <Button
                 android:id="@+id/btn_emergency"
                 android:layout_width="0dp"
                 android:layout_weight="3"

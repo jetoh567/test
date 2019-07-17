@@ -14,8 +14,8 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.example.gurufinalproject.R;
 import com.example.gurufinalproject.fragment.FragmentMemberAlert;
-import com.example.gurufinalproject.fragment.FragmentMemberDetail;
 import com.example.gurufinalproject.fragment.FragmentMemberAll;
+import com.example.gurufinalproject.fragment.FragmentMemberDetail;
 import com.example.gurufinalproject.fragment.FragmentMemberList;
 import com.example.gurufinalproject.fragment.FragmentMemberMain;
 import com.google.android.material.navigation.NavigationView;
