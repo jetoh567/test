@@ -22,11 +22,10 @@
         <activity android:name=".activity.SelectLoginActivity" />
         <activity android:name=".activity.MemberDetailActivity" />
         <activity android:name=".activity.NotifyActivity" />
-        <activity android:name=".activity.administrator.AdministratorMainActivity" />
-        <activity android:name=".activity.administrator.CheckCommunalPropertyActivity" />
-        <activity android:name=".activity.administrator.CheckLostArticleActivity" />
-        <activity android:name=".activity.administrator.CheckOutsiderActivity" />
-        <activity android:name=".activity.administrator.CheckWildAnimalActivity" />
+        <activity android:name=".activity.administrator.AdminCheckWritingActivity"/>
+        <activity android:name=".activity.administrator.AdminNoticeActivity"/>
+        <activity android:name=".activity.administrator.NoticeDetailActivity"/>
+        <activity android:name=".activity.administrator.NoticeWriteActivity"/>
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
