@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.gurufinalproject.R;
 import com.example.gurufinalproject.fragment.Fragment_1;
@@ -29,6 +30,13 @@ public class NotifyActivity extends AppCompatActivity {
 
         mTabLayout = findViewById(R.id.tabLayout);
         mViewPager = findViewById(R.id.viewPager);
+
+        findViewById(R.id.btnBack).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         // 탭 설정
         mTabLayout.addTab(mTabLayout.newTab().setText("외부침입"));

@@ -32,15 +32,6 @@ public class MemberDetailActivity extends AppCompatActivity {
         txtMemId.setText("이메일 : " + memberBean.userid);
         txtMemNum.setText("학번 : " + memberBean.userNum );
 
-        Button btnMemWrite = findViewById(R.id.btnMemWrite);
-        btnMemWrite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MemberDetailActivity.this, NotifyActivity.class);
-                startActivity(i);
-            }
-        });
-
         Button btnMemLogout = findViewById(R.id.btnMemLogout);
         btnMemLogout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,13 +40,5 @@ public class MemberDetailActivity extends AppCompatActivity {
             }
         });
 
-        Button btnMemView = findViewById(R.id.btnMemView);
-        btnMemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MemberDetailActivity.this, MyNoteViewActivity.class);
-                startActivity(i);
-            }
-        });
     } // end Oncreate
 } // end class

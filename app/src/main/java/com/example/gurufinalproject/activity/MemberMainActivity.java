@@ -11,6 +11,7 @@ import com.example.gurufinalproject.fragment.Fragment_2;
 
 public class MemberMainActivity extends AppCompatActivity {
 
+    private Intent i;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +33,16 @@ public class MemberMainActivity extends AppCompatActivity {
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.btn_info:
-                    Intent i = new Intent(getBaseContext(),MemberDetailActivity.class);
+                    i = new Intent(getBaseContext(),MemberDetailActivity.class);
                     startActivity(i);
-                    finish();
+                    break;
+                case R.id.btn_mylist:
+                    i = new Intent(getBaseContext(), MyNoteViewActivity.class);
+                    startActivity(i);
+                    break;
+                case R.id.btn_menu:
+                    i= new Intent(getBaseContext(),NotifyActivity.class);
+                    startActivity(i);
                     break;
 
 
