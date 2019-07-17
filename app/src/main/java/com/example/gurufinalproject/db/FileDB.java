@@ -6,6 +6,7 @@ import android.text.TextUtils;
 
 import com.example.gurufinalproject.bean.MemberBean;
 import com.example.gurufinalproject.bean.NoteBean;
+import com.example.gurufinalproject.bean.NoticeBean;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -73,6 +74,28 @@ public class FileDB {
         //4.저장한다.
         SharedPreferences.Editor editor = getSP(context).edit();
         editor.putString("adminList", listStr);
+        editor.commit();
+    }
+
+    //기존 멤버 교체
+    public static void setAdmin(Context context, MemberBean memberBean) {
+        //전체 멤버 리스트를 취득한다.
+        List<MemberBean> AdminList = getAdminList(context);
+        if(AdminList.size() == 0) return;
+
+        for(int i=0; i<AdminList.size(); i++) { //for each
+            MemberBean bean = AdminList.get(i);
+            if( TextUtils.equals(bean.userid, memberBean.userid) ) {
+                //같은 멤버ID 를 찾았다.
+                AdminList.set(i, memberBean);
+                break;
+            }
+        }
+        //새롭게 update 된 리스트를 저장한다.
+        String jsonStr = mGson.toJson(AdminList);
+        //멤버 리스트를 저장한다.
+        SharedPreferences.Editor editor = getSP(context).edit();
+        editor.putString("AdminList", jsonStr);
         editor.commit();
     }
 
@@ -175,6 +198,50 @@ public class FileDB {
         }
         //3-2.못찾았을 경우는??? null 리턴
         return null;
+    }
+
+    //공지사항을 추가하는 메서드
+    public static void addNotice(Context context, String noticeId, NoticeBean noticeBean) {
+        MemberBean findMember = getFindAdmin(context, noticeId);
+        if(findMember == null) return;
+
+        List<NoticeBean> noticeList = findMember.noticeList;
+        if(noticeList == null) {
+            noticeList = new ArrayList<>();
+        }
+        //고유 공지사항 ID 를 생성해준다.
+        noticeBean.noticeId = System.currentTimeMillis();
+        noticeList.add(noticeBean);
+        findMember.noticeList = noticeList;
+        //저장
+        setAdmin(context, findMember);
+    }
+
+    public static NoticeBean getNotice(Context context, long noticeId) {
+        MemberBean memberBean = getLoginAdmin(context);
+        List<NoticeBean> noticeList = memberBean.noticeList;
+        if(noticeList == null) return null;
+
+        for(NoticeBean bean : noticeList) {
+            if(bean.noticeId == noticeId) {
+                //찾았다.
+                return bean;
+            }
+        }
+        return null;
+    }
+
+    //공지사항 리스트 취득
+    public static List<NoticeBean> getNoticeList(Context context) {
+        MemberBean memberBean = getLoginAdmin(context);
+        if(memberBean == null) return null;
+
+        if(memberBean.noticeList == null) {
+            return new ArrayList<>();
+        }
+        else {
+            return memberBean.noticeList;
+        }
     }
 
 
