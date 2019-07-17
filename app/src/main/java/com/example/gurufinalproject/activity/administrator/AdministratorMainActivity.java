@@ -1,6 +1,7 @@
 package com.example.gurufinalproject.activity.administrator;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -8,10 +9,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.activity.LoginActivity;
 import com.example.gurufinalproject.bean.MemberBean;
 import com.example.gurufinalproject.db.FileDB;
 
 public class AdministratorMainActivity extends AppCompatActivity {
+
+    public String department ="" ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +28,6 @@ public class AdministratorMainActivity extends AppCompatActivity {
         MemberBean memberBean = FileDB.getLoginAdmin(this);
 
         txtAdminName.setText("이름 : " + memberBean.name);
-        String department ="" ;
         switch(memberBean.userNum){
             case 0:
                 department = "상황실";
@@ -45,8 +48,41 @@ public class AdministratorMainActivity extends AppCompatActivity {
         findViewById(R.id.btnAdminLogout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+                Intent intent = new Intent(getApplicationContext(),
+                        LoginActivity.class);
+                startActivity(intent);
             }
         });
+
+        findViewById(R.id.btnAdminCheck).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                switch(department){
+                    case "상황실":
+                        Intent intent = new Intent(getApplicationContext(),
+                                CheckOutsiderActivity.class);
+                        startActivity(intent);
+                        break;
+                    case "학생 지원실":
+                        Intent intent2 = new Intent(getApplicationContext(),
+                                CheckLostArticleActivity.class);
+                        startActivity(intent2);
+                        break;
+                    case "기관실":
+                        Intent intent3 = new Intent(getApplicationContext(),
+                                CheckCommunalPropertyActivity.class);
+                        startActivity(intent3);
+                        break;
+
+                    case "경비실":
+                        Intent intent4 = new Intent(getApplicationContext(),
+                                CheckWildAnimalActivity.class);
+                        startActivity(intent4);
+                        break;
+                }
+            }
+        });
+
     }
 }
