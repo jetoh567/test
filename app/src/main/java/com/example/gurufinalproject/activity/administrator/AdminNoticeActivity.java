@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -64,6 +65,9 @@ public class AdminNoticeActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(),
                         LoginActivity.class);
                 startActivity(intent);
+
+                Toast.makeText(getApplicationContext(), "로그아웃 성공..", Toast.LENGTH_SHORT).show();
+
             }
         });
 

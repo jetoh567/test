@@ -39,14 +39,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="글작성"
-            android:layout_gravity="center"/>
+            android:layout_weight="0.5" />
 
         <Button
             android:id="@+id/btnNoticeCancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="취소"
-            android:layout_gravity="center"/>
+            android:layout_weight="0.5" />
 
     </LinearLayout>
 
