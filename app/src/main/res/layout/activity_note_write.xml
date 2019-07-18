@@ -23,20 +23,11 @@
         android:id="@+id/agree1"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:text="허위를 유포하시면 안됩니다."
+        android:text="허위사실이 아닌 사실만을 작성할 것ㅇ을 유포하시면 안됩니다."
         android:layout_weight="0.5"
         android:layout_gravity="center"
         android:textSize="15dp"
         android:layout_marginTop="20dp"/>
-
-    <CheckBox
-        android:id="@+id/agree2"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="정확한 사실을 입력해주세요."
-        android:layout_weight="0.5"
-        android:layout_gravity="center"
-        android:textSize="15dp"/>
 
     <ImageView
         android:id="@+id/imgPic"
