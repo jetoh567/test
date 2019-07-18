@@ -77,6 +77,7 @@ public class NoteAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(mContext,NoteDetailActivity.class);
+                i.putExtra("detail",noteBean);
                 mContext.startActivity(i);
             }
         });

@@ -10,7 +10,7 @@
     android:weightSum="10">
 
     <TextView
-        android:id="@+id/detailWriter"
+        android:id="@+id/detailWriterA"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="0.5"
@@ -24,7 +24,7 @@
         android:layout_weight="6"
         android:gravity="center">
         <ImageView
-            android:id="@+id/detailImg"
+            android:id="@+id/detailImgA"
             android:layout_width="180dp"
             android:layout_height="180dp"
             tools:srcCompat="#ffffff"
@@ -33,7 +33,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/detailLocation"
+        android:id="@+id/detailLocationA"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -43,7 +43,7 @@
         android:layout_gravity="center"/>
 
     <TextView
-        android:id="@+id/detailContent"
+        android:id="@+id/detailContentA"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
@@ -58,7 +58,7 @@
         android:orientation="vertical"
         android:padding="10dp">
         <TextView
-            android:id="@+id/detailRegDate"
+            android:id="@+id/detailRegDateA"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.5"
@@ -67,7 +67,7 @@
             android:layout_gravity="center"/>
 
         <TextView
-            android:id="@+id/detailFinDate"
+            android:id="@+id/detailFinDateA"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.5"
@@ -75,7 +75,7 @@
             android:textSize="15dp"
             android:layout_gravity="center"/>
         <TextView
-            android:id="@+id/detailCheckWho"
+            android:id="@+id/detailCheckWhoA"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="0.5"
@@ -86,4 +86,10 @@
 
     </LinearLayout>
 
+        <Button
+            android:id="@+id/btn_checkDoneA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="신고 내용 해결"/>
 </LinearLayout>
