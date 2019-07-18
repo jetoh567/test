@@ -95,10 +95,10 @@ public class NoteWriteActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.btnChosePic).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btnNoteCancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                finish();
             }
         });
 
@@ -241,6 +241,7 @@ public class NoteWriteActivity extends AppCompatActivity {
         startActivityForResult(i, REQUEST_IMAGE_CAPTURE);
 
     }
+
     private File getOutPutMediaFile() {
         File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES), "Profile");
