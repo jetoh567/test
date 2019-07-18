@@ -27,7 +27,7 @@ public class FragmentMemberMain extends Fragment {
         view.findViewById(R.id.btn_lost).setOnClickListener(mBtnClick);
         view.findViewById(R.id.btn_animal).setOnClickListener(mBtnClick);
         view.findViewById(R.id.btn_emergency).setOnClickListener(mBtnClick);
-        view.findViewById(R.id.btn_else).setOnClickListener(mBtnClick);
+        view.findViewById(R.id.btn_aso).setOnClickListener(mBtnClick);
 
         return view;
     }
@@ -58,7 +58,7 @@ public class FragmentMemberMain extends Fragment {
                     intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:029701000"));
                     startActivity(intent);
                     break;
-                case R.id.btn_else:
+                case R.id.btn_aso:
                     intent = new Intent(getActivity(), ElseActivity.class);
                     startActivity(intent);
             }
