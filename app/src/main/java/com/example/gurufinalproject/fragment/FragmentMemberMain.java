@@ -26,6 +26,7 @@ public class FragmentMemberMain extends Fragment {
         view.findViewById(R.id.btn_lost).setOnClickListener(mBtnClick);
         view.findViewById(R.id.btn_animal).setOnClickListener(mBtnClick);
         view.findViewById(R.id.btn_emergency).setOnClickListener(mBtnClick);
+        view.findViewById(R.id.btn_aso).setOnClickListener(mBtnClick);
 
         return view;
     }

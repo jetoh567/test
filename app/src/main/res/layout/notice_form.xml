@@ -47,13 +47,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="수정"
-                android:layout_marginLeft="140dp"/>
+                android:layout_marginLeft="140dp"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:background="#AB3030"
+                android:layout_marginRight="5dp"/>
 
             <Button
                 android:id="@+id/btnNoticeDetail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="상세버튼" />
+                android:text="상세버튼"
+                android:textColor="#ffffff"
+                android:textStyle="bold"
+                android:background="#AB3030"/>
 
         </LinearLayout>
 

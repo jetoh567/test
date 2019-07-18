@@ -28,19 +28,45 @@
             android:text="Google Id : "
             android:textSize="17dp" />
 
-        <EditText
-            android:id="@+id/edtName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="이름"
-            android:layout_margin="10dp"/>
 
-        <EditText
-            android:id="@+id/edtUserNum"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="학번"
-            android:layout_margin="10dp"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="13dp"
+                android:textStyle="bold"
+                android:text="이름: "
+                android:textSize="17dp" />
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="13dp"
+                android:textStyle="bold"
+                android:text="학번: "
+                android:textSize="17dp" />
+            <EditText
+                android:id="@+id/edtUserNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+
 
         <TextView
             android:layout_width="match_parent"
@@ -50,18 +76,33 @@
             android:text="- 없이 숫자만 입력"
             android:textColor="#FF4F4F"/>
 
-        <EditText
-            android:id="@+id/edtPhoneNum"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="전화번호"
-            android:layout_margin="10dp"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="13dp"
+                android:textStyle="bold"
+                android:text="전화번호: "
+                android:textSize="17dp" />
+            <EditText
+                android:id="@+id/edtPhoneNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/btnCreate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="회원가입하기"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:background="#AB3030"
             android:layout_gravity="center"/>
     </LinearLayout>
 </LinearLayout>

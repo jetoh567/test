@@ -6,15 +6,48 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="회원가입"
-    android:textSize="30dp"
-    android:layout_gravity="center"
-    android:layout_marginTop="30dp"
-    />
-<LinearLayout
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+
+            android:text="회원가입"
+            android:textSize="40dp" />
+
+<!--
+<FrameLayout
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bar_1" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:text="회원가입"
+            android:textSize="40dp" />
+    </LinearLayout>
+
+</FrameLayout>
+    -->
+
+
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -27,12 +60,25 @@
         android:layout_margin="13dp"
         android:text="Google Id : "
         android:textSize="17dp" />
-    <EditText
-        android:id="@+id/edtName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="이름"
-        android:layout_margin="10dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="13dp"
+                android:textStyle="bold"
+                android:text="이름: "
+                android:textSize="17dp" />
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"/>
+
+
+        </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -61,18 +107,36 @@
         android:layout_marginTop="10dp"
         android:text="- 없이 숫자만 입력"
         android:textColor="#FF4F4F"/>
-    <EditText
-        android:id="@+id/edtPhoneNum"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="전화번호"
-        android:layout_margin="10dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="13dp"
+                android:textStyle="bold"
+                android:text="전화번호: "
+                android:textSize="17dp" />
+            <EditText
+                android:id="@+id/edtPhoneNum"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"/>
+
+
+        </LinearLayout>
+
 
     <Button
         android:id="@+id/btnCreate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="회원가입하기"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:background="#AB3030"
         android:layout_gravity="center"/>
 </LinearLayout>
 
