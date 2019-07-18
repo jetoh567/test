@@ -186,19 +186,6 @@ public class FileDB {
         return noteList;
     }
 
-    public static NoteBean getFindNote(Context context, long noteid) {
-        //1.멤버리스트를 가져온다
-        List<NoteBean> noteList = getNoteList(context);
-        //2.for 문 돌면서 해당 아이디를 찾는다.
-        for(NoteBean note : noteList) {
-            if(note.noteId == noteid) { //아이디가 같다.
-                //3.찾았을 경우는 해당 MemberBean 을 리턴한다.
-                return note;
-            }
-        }
-        //3-2.못찾았을 경우는??? null 리턴
-        return null;
-    }
 
     //공지사항을 추가하는 메서드
     public static void addNotice(Context context, String noticeId, NoticeBean noticeBean) {
