@@ -20,14 +20,26 @@
         android:orientation="vertical"
         android:layout_marginTop="30dp"
         android:padding="20dp">
-
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/btnLogin"
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center">
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/btnLogin"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center">
+            </com.google.android.gms.common.SignInButton>
 
-        </com.google.android.gms.common.SignInButton>
+            <ImageView
+                android:id="@+id/fake_btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/swus"
+                android:layout_gravity="center"
+                />
+        </FrameLayout>
+
     </LinearLayout>
 
     <LinearLayout
