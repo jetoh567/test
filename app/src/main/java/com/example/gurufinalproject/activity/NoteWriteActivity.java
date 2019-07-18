@@ -42,13 +42,14 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
 
 public class NoteWriteActivity extends AppCompatActivity {
 
     public static final String STORAGE_DB_URL ="gs://guru2-final-1562726023772.appspot.com";
     private ImageView mImgTitle;
-    private EditText mEdtDetail, mEdtTitle;
-    private CheckBox agree1, agree2, access;
+    private EditText mEdtDetail, mEdtLocation;
+    private CheckBox agree1, access;
 
     private Uri mCaptureUri;
     //사진이 저장된 단말기상의 실제 경로
@@ -56,7 +57,6 @@ public class NoteWriteActivity extends AppCompatActivity {
     //startActivityForResult() 에 넘겨주는 값, 이 값이 나중에 onActivityResult()로 돌아와서
     //내가 던진값인지를 구별할 때 사용하는 상수이다.
     public static final int REQUEST_IMAGE_CAPTURE = 200;
-    private NoteBean mNoteBean;
 
     private FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
     private FirebaseStorage mFirebaseStorage = FirebaseStorage.getInstance(STORAGE_DB_URL);
@@ -68,10 +68,9 @@ public class NoteWriteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_note_write);
 
         mImgTitle = findViewById(R.id.imgNote);
-        mEdtTitle = findViewById(R.id.edtNoteTitle);
+        mEdtLocation = findViewById(R.id.edtNoteLocation);
         mEdtDetail = findViewById(R.id.edtNoteDetail);
         agree1 = findViewById(R.id.agree1);
-        agree2 = findViewById(R.id.agree2);
         access = findViewById(R.id.check_access);
 
         //카메라를 사용하기 위한 퍼미션을 요청한다.
@@ -96,20 +95,27 @@ public class NoteWriteActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.btnChosePic).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
     }
 
     private void upload() {
 
-        if(!agree1.isChecked()||!agree2.isChecked()){
+        if(!agree1.isChecked()){
             Toast.makeText(this, "허위 사실이 아님을 체크해주세요.",Toast.LENGTH_SHORT).show();
             return;
         }
-        String title = "", detail = "";
+        String location = "", detail = "";
 
-        title = mEdtTitle.getText().toString();
+        location = mEdtLocation.getText().toString();
 
-        if(title.equals("")){
-            Toast.makeText(this, "제목을 작성하여주세요.",Toast.LENGTH_SHORT).show();
+        if(location.equals("")){
+            Toast.makeText(this, "위치를 작성해주세요.",Toast.LENGTH_SHORT).show();
             return;
         }
         detail = mEdtDetail.getText().toString();
@@ -159,7 +165,7 @@ public class NoteWriteActivity extends AppCompatActivity {
         noteBean.id = id;
         noteBean.userid = mFirebaseAuth.getCurrentUser().getEmail();
 
-        noteBean.title = mEdtTitle.getText().toString();
+        noteBean.location = mEdtLocation.getText().toString();
         noteBean.detail = mEdtDetail.getText().toString();
 
          noteBean.imgUri = imgUri;
@@ -184,7 +190,10 @@ public class NoteWriteActivity extends AppCompatActivity {
         Toast.makeText(this,"게시물이 등록되었습니다.",Toast.LENGTH_SHORT).show();
         finish();
     }
-
+    public static String getUserIdFromUUID (String userEmail){
+        long val = UUID.nameUUIDFromBytes(userEmail.getBytes()).getMostSignificantBits();
+        return String.valueOf(val);
+    }
 
     private void checkPermission() {
         // Self 권한 체크

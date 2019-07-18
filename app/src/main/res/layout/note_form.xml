@@ -10,13 +10,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
-        <TextView
-            android:id="@+id/noteTitle"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="2"
-            android:text="신고 제목"
-            android:textSize="25dp" />
 
             <TextView
                 android:id="@+id/noteDetail"
@@ -25,16 +18,40 @@
                 android:layout_weight="3"
                 android:text="신고 내용"
                 android:textSize="20dp"/>
+        <TextView
+            android:id="@+id/noteLocation"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="3.5"
+            android:text="신고 위치"
+            android:textSize="15dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/noteWriter"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:id="@+id/noteDate"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:text="신고자 이름"
+                android:text="신고 날짜"
                 android:textAlignment="viewEnd"
-                android:layout_margin="5dp"
                 android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/noteCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="완료 여부"
+                android:textAlignment="viewEnd"
+
+                android:textSize="10dp" />
+
+        </LinearLayout>
 
         </LinearLayout>
 </LinearLayout>

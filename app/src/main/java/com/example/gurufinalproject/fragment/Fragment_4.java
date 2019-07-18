@@ -1,26 +1,45 @@
 package com.example.gurufinalproject.fragment;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.activity.NoteAdapter;
+import com.example.gurufinalproject.activity.NoteWriteActivity;
 import com.example.gurufinalproject.bean.NoteBean;
 import com.example.gurufinalproject.db.FileDB;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Fragment_4 extends Fragment {
+
+    private FirebaseDatabase mFirebaseDB = FirebaseDatabase.getInstance();
     private ListView mLstNote;
-    public ListAdapter adapter;
+    public NoteAdapter mAdapter;
     public List<NoteBean> noteList = new ArrayList<>();
 
     @Nullable
@@ -31,6 +50,8 @@ public class Fragment_4 extends Fragment {
 
         mLstNote = view.findViewById(R.id.lstNote4);
 
+        mAdapter = new NoteAdapter(getContext(),noteList);
+        mLstNote.setAdapter(mAdapter);
         return view;
         // 메인페이지로 가는 버튼
     }// end Oncreate
@@ -39,47 +60,35 @@ public class Fragment_4 extends Fragment {
     public void onResume() {
         super.onResume();
 
-        noteList = FileDB.getNoteList(getContext());
-        // adapter 생성 및 적용
-        adapter = new ListAdapter(noteList,getContext());
-        // list view에 adapter 설정
-        mLstNote.setAdapter(adapter);
+
+        mFirebaseDB.getReference().child("Note").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //데이터 받아와서 리스트에 선언
+                noteList.clear();
+
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    NoteBean note = snapshot.getValue(NoteBean.class);
+                    if(note.department == 1 && note.access == false){
+                        noteList.add(note);
+                    }
+                }
+
+                //바뀌는 데이터로 refresh 한다.
+                if(mAdapter!=null){
+                    mAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
     }
 
-    class ListAdapter extends BaseAdapter {
-       List<NoteBean> noteList;
-       Context mContext;
-       LayoutInflater inflater;
-
-        public ListAdapter(List<NoteBean> noteList, Context context) {
-            this.noteList = noteList;
-            this.mContext = context;
-            this.inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        }
-
-        public void setNoteList(List<NoteBean> noteList) {
-            this.noteList = noteList;
-        }
-
-        @Override
-        public int getCount() {
-            return noteList.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return noteList.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        @Override
-        public View getView(final int position, View convertView, ViewGroup parent) {
-            return null;
-        }
-    }
 
 }// end class

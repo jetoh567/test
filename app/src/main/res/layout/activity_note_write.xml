@@ -5,36 +5,86 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="10"
     >
-
-    <EditText
-        android:id="@+id/edtNoteTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:hint="제목을 입력하세요."
-        android:layout_gravity="center"
-        android:textSize="20dp"
-        android:layout_marginTop="10dp"/>
-
     <CheckBox
         android:id="@+id/agree1"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:text="허위를 유포하시면 안됩니다."
-        android:layout_weight="0.5"
-        android:layout_gravity="center"
-        android:textSize="15dp"
-        android:layout_marginTop="10dp"/>
-
-    <CheckBox
-        android:id="@+id/agree2"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="정확한 사실을 입력해주세요."
+        android:text="정확한 사실만을 기재해주세요."
         android:layout_weight="0.5"
         android:layout_gravity="center"
         android:textSize="15dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:layout_gravity="center"
+        android:text="사실이 아닐 시, 불이익을 받을 수 있습니다."
+        android:textSize="10dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.5"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imgNote"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:src="@color/cardview_light_background" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnAddPic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사진 찍기"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/btnChosePic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사진 선택"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/edtNoteLocation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:hint="위치"
+        android:textSize="20dp"
+        android:padding="10dp"
+        android:singleLine="true"
+        android:layout_margin="10dp"
+        />
+    <EditText
+        android:id="@+id/edtNoteDetail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:padding="10dp"
+        android:hint="신고내용을 작성해주세요."
+        android:textSize="20dp"
+        android:inputType="textMultiLine"
+        android:layout_margin="10dp"
+        />
 
     <CheckBox
         android:id="@+id/check_access"
@@ -45,45 +95,13 @@
         android:layout_weight="0.5"
         android:layout_gravity="center"
         android:textSize="15dp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:gravity="center"
-        android:layout_weight="3">
-        <ImageView
-            android:id="@+id/imgNote"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@color/cardview_light_background"
-            android:layout_gravity="center"/>
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/btnAddPic"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="첨부파일"
-        android:layout_gravity="center"/>
-
-    <EditText
-        android:id="@+id/edtNoteDetail"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"
-        android:hint="신고내용을 작성해주세요."
-        android:textSize="20dp"
-        android:inputType="textMultiLine"
-        android:layout_margin="10dp"
-        />
-
     <Button
         android:id="@+id/btnNoteRegister"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_gravity="center"
         android:layout_weight="1"
+        android:layout_marginBottom="10dp"
         android:text="신고글 작성" />
 
 </LinearLayout>

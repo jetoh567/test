@@ -6,7 +6,7 @@ public class NoteBean {
     public int department; // 1: 학생 지원실 (분실물) 2:기관실 (공공기물) 3: 경비실 (야생동물)
     public String id;
     public String userid;
-    public String title;
+    public String location;
     public String detail;
     public String imgUri;
     public String imgName;
