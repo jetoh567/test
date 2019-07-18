@@ -4,15 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical" >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="70dp"
-
             android:text="회원가입"
             android:textSize="40dp" />
 
@@ -48,18 +46,18 @@
 
 
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginTop="30dp">
-
-    <TextView
-        android:id="@+id/txtGoogleId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="13dp"
-        android:text="Google Id : "
-        android:textSize="17dp" />
+        android:orientation="vertical"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/txtGoogleId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="13dp"
+            android:text="Google Id : "
+            android:textSize="17dp" />
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,42 +69,43 @@
                 android:textStyle="bold"
                 android:text="이름: "
                 android:textSize="17dp" />
+
             <EditText
                 android:id="@+id/edtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"/>
-
-
+                android:layout_margin="10dp"
+                android:background="@drawable/boarder"
+                android:ems="10"
+                android:inputType="textMultiLine|textNoSuggestions" />
         </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="1"
-        android:layout_margin="13dp">
-        <TextView
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="근무부서"
-            android:textSize="17dp"
-            android:layout_weight="0.3"
-            />
-        <Spinner
-            android:id="@+id/department"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.7"></Spinner>
-    </LinearLayout>
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_margin="13dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="근무부서"
+                android:textSize="17dp"
+                android:layout_weight="0.3" />
+            <Spinner
+                android:id="@+id/department"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"></Spinner>
+        </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginTop="10dp"
-        android:text="- 없이 숫자만 입력"
-        android:textColor="#FF4F4F"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:text="- 없이 숫자만 입력"
+            android:textColor="#FF4F4F"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -123,21 +122,22 @@
                 android:id="@+id/edtPhoneNum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"/>
-
-
+                android:layout_margin="10dp"
+                android:background="@drawable/boarder"
+                android:ems="10"
+                android:inputType="textMultiLine|textNoSuggestions" />
         </LinearLayout>
 
 
-    <Button
-        android:id="@+id/btnCreate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="회원가입하기"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
-        android:background="#AB3030"
-        android:layout_gravity="center"/>
-</LinearLayout>
+        <Button
+            android:id="@+id/btnCreate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="회원가입하기"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:background="#AB3030"
+            android:layout_gravity="center"/>
+    </LinearLayout>
 
 </LinearLayout>
