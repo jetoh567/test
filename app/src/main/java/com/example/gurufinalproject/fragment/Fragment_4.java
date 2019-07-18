@@ -1,5 +1,6 @@
 package com.example.gurufinalproject.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.gurufinalproject.R;
 import com.example.gurufinalproject.activity.NoteAdapter;
+import com.example.gurufinalproject.activity.NoteDetailActivity;
 import com.example.gurufinalproject.bean.NoteBean;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -38,6 +40,7 @@ public class Fragment_4 extends Fragment {
 
         mAdapter = new NoteAdapter(getContext(),noteList);
         mLstNote.setAdapter(mAdapter);
+
         return view;
         // 메인페이지로 가는 버튼
     }// end Oncreate
@@ -45,7 +48,6 @@ public class Fragment_4 extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-
 
         mFirebaseDB.getReference().child("Note").addValueEventListener(new ValueEventListener() {
             @Override

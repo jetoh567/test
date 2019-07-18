@@ -1,5 +1,6 @@
 package com.example.gurufinalproject.activity;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -71,6 +72,14 @@ public class NoteAdapter extends BaseAdapter {
         }else{
             noteCheck.setText("완료 날짜 : "+noteBean.findate);
         }
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(mContext,NoteDetailActivity.class);
+                mContext.startActivity(i);
+            }
+        });
         return view;
     }
 }
