@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="기자재실에서 검토후 빠른 조취를 취할 것 입니다."
+        android:text="시설관재팀에서 검토후 빠른 조취를 취할 것 입니다."
         android:textSize="15dp"
         android:padding="10dp"/>
 

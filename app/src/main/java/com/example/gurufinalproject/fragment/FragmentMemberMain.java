@@ -41,10 +41,12 @@ public class FragmentMemberMain extends Fragment {
                     break;
                 case R.id.btn_public:
                     intent = new Intent(getActivity(), NoteWriteActivity.class);
+                    intent.putExtra("department",2);
                     startActivity(intent);
                     break;
                 case R.id.btn_lost:
                     intent = new Intent(getActivity(),NoteWriteActivity.class);
+                    intent.putExtra("department",1);
                     startActivity(intent);
                     break;
                 case R.id.btn_animal:

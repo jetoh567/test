@@ -39,6 +39,7 @@ public class Fragment_3 extends Fragment {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(getActivity(), NoteWriteActivity.class);
+                    intent.putExtra("department",3);
                     startActivity(intent);
                 }
             });

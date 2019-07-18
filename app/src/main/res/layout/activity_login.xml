@@ -30,15 +30,29 @@
         android:orientation="vertical"
         android:layout_marginTop="30dp"
         android:padding="20dp">
-
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/btnLogin"
+        <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="120dp"
             android:layout_gravity="center">
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/btnLogin"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center">
+            </com.google.android.gms.common.SignInButton>
 
-        </com.google.android.gms.common.SignInButton>
+            <!-- 버튼 사이즈 대충 150 *20 정도로 해놨고 이미지도 만드시면 아래에 이미지 사이즈도 버튼 사이즈에 맞춰줘야지 이미지가 덮여집니다. -->
+            
+            <ImageView
+                android:id="@+id/fake_btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/swus"
+                android:layout_gravity="center"
+                />
+        </FrameLayout>
+
     </LinearLayout>
 
     <LinearLayout

@@ -29,10 +29,5 @@
         android:textSize="15dp"
         android:padding="10dp"/>
 
-    <ListView
-        android:id="@+id/lstNoteW"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="4"></ListView>
 
 </LinearLayout>
