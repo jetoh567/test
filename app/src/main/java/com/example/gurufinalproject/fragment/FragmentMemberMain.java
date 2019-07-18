@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.activity.ElseActivity;
 import com.example.gurufinalproject.activity.NoteWriteActivity;
 
 public class FragmentMemberMain extends Fragment {
@@ -26,7 +27,7 @@ public class FragmentMemberMain extends Fragment {
         view.findViewById(R.id.btn_lost).setOnClickListener(mBtnClick);
         view.findViewById(R.id.btn_animal).setOnClickListener(mBtnClick);
         view.findViewById(R.id.btn_emergency).setOnClickListener(mBtnClick);
-        view.findViewById(R.id.btn_aso).setOnClickListener(mBtnClick);
+        view.findViewById(R.id.btn_else).setOnClickListener(mBtnClick);
 
         return view;
     }
@@ -55,6 +56,10 @@ public class FragmentMemberMain extends Fragment {
                     break;
                 case R.id.btn_emergency:
                     intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:029701000"));
+                    startActivity(intent);
+                    break;
+                case R.id.btn_else:
+                    intent = new Intent(getActivity(), ElseActivity.class);
                     startActivity(intent);
             }
         }

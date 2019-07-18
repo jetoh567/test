@@ -10,64 +10,65 @@
     android:weightSum="10">
 
     <TextView
-        android:id="@+id/txtTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="2"
-        android:text="제목"
-        android:layout_gravity="center"
-        android:textSize="40dp"
-        android:layout_marginTop="20dp"/>
-
-    <TextView
-        android:id="@+id/txtInfo"
+        android:id="@+id/detailWriter"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="0.5"
-        android:text="TextView"
+        android:layout_marginTop="20dp"
+        android:text="신고자"
         android:layout_gravity="right"/>
 
-    <CheckBox
-        android:id="@+id/agree1"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:checked="true"
-        android:text="허위를 유포하시면 안됩니다."
-        android:layout_weight="0.5"
-        android:layout_gravity="center" />
-
-    <ImageView
-        android:id="@+id/imgPic"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_weight="2"
-        tools:srcCompat="@tools:sample/avatars[3]"
-        android:layout_gravity="center"/>
-
-    <TextView
-        android:id="@+id/txtWriting"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:text="TextView"
+        android:layout_weight="4"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/detailImg"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            tools:srcCompat="#ffffff"
+            android:layout_margin="20dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/detailLocation"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:text="신고 위치"
         android:layout_margin="10dp"
-        android:textSize="20dp"
+        android:textSize="15dp"
         android:layout_gravity="center"/>
 
     <TextView
-        android:id="@+id/txtCheck"
+        android:id="@+id/detailContent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:text="신고 내용"
+        android:textSize="15dp"
+        android:layout_margin="10dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/detailDate"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
-        android:text="TextView"
+        android:text="신고 등록 날짜와 완료 날짜 + 완료한 사람"
+        android:textSize="15dp"
+        android:layout_margin="10dp"
         android:layout_gravity="center"/>
+
 
     <Button
         android:id="@+id/btnCheck"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="확인"
+        android:layout_weight="0.8"
+        android:text="뒤로가기"
         android:layout_gravity="center"/>
 
 </LinearLayout>
