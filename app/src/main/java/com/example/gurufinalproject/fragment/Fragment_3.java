@@ -68,7 +68,7 @@ public class Fragment_3 extends Fragment {
                 for(DataSnapshot snapshot : dataSnapshot.getChildren()){
                     NoteBean note = snapshot.getValue(NoteBean.class);
                     if(note.department == 3 && note.access == false){
-                        noteList.add(note);
+                        noteList.add(0,note);
                     }
                 }
 
