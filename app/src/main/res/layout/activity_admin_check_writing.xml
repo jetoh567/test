@@ -25,29 +25,72 @@
         android:layout_gravity="center">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="이름 :"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#AB3030"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
+        <TextView
             android:id="@+id/txtAdminName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="textview"
+            android:textSize="14dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="근무부서 :"
+            android:textColor="#AB3030"
             android:textSize="15dp"
-            android:layout_marginRight="10dp"/>
-
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
         <TextView
             android:id="@+id/txtAdminPart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="textview"
+            android:textSize="14dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="연락처 :"
+            android:textColor="#AB3030"
             android:textSize="15dp"
-            android:layout_marginRight="10dp"/>
-
+            android:textStyle="bold"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"/>
         <TextView
             android:id="@+id/txtAdminNum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="textview"
-            android:textSize="15dp" />
+            android:textSize="14dp"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerInParent="true"
+        android:background="#AB3030"
+        android:layout_margin="15dp"/>
+
+    <ListView
+        android:id="@+id/noteList"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 
     <Button
         android:id="@+id/btnAdminLogout"
@@ -59,11 +102,5 @@
         android:background="#AB3030"
         android:textColor="#ffffff"
         android:textStyle="bold" />
-
-    <ListView
-        android:id="@+id/noteList"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.8" />
 
 </LinearLayout>

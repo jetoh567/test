@@ -17,6 +17,13 @@
         android:layout_gravity="center"
         android:layout_marginTop ="10dp"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerInParent="true"
+        android:background="#AB3030"
+        android:layout_marginBottom="10dp"/>
+
     <ListView
         android:id="@+id/lstAlertView"
         android:layout_width="match_parent"

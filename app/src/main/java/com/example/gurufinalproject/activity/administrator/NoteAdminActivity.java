@@ -49,8 +49,8 @@ public class NoteAdminActivity extends AppCompatActivity {
         note  = (NoteBean) getIntent().getSerializableExtra("detailA");
 
         writer.setText("신고자 : "+note.userName);
-        location.setText("신고 위치 : " +note.location);
-        content.setText("신고 내용 : " + note.detail);
+        location.setText(note.location);
+        content.setText(note.detail);
 
         regDate.setText("신고 날짜 : "+note.regdate);
 
