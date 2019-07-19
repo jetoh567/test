@@ -82,20 +82,20 @@ public class LoginActivity extends AppCompatActivity {
             try{
                 //구글 로그인 성공
                 GoogleSignInAccount account = task.getResult(ApiException.class);
-                Toast.makeText(getBaseContext(),"구글로그인에 성공하셨습니다.",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getBaseContext(),"구글로그인에 성공하셨습니다.",Toast.LENGTH_SHORT).show();
 
                 MemberBean findMember = FileDB.getFindMember(this,account.getEmail());
                 MemberBean findAdmin = FileDB.getFindAdmin(this,account.getEmail());
                 if(findMember != null ){
                     //FireBase 인증하러가기
                     fireBaseAuthWithGoogle(account);
-                    Toast.makeText(getBaseContext(),"firebase 학생 성공",Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getBaseContext(),"firebase 학생 성공",Toast.LENGTH_SHORT).show();
                     FileDB.setLoginMember(this, findMember);
                 }else{
                     if(findAdmin != null){
                         //FireBase 인증하러가기
                         fireBaseAuthWithGoogle(account);
-                        Toast.makeText(getBaseContext(),"firebase 관리자 성공",Toast.LENGTH_SHORT).show();
+                      //  Toast.makeText(getBaseContext(),"firebase 관리자 성공",Toast.LENGTH_SHORT).show();
                         FileDB.setLoginAdmin(this, findAdmin);
                         student =false;
                     }else{
@@ -116,7 +116,6 @@ public class LoginActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     //FireBase 로그인 성공
                     //Toast.makeText(getBaseContext(),"FireBase 로그인 성공",Toast.LENGTH_SHORT).show();
-                    //메인 화면으로 이동한다.
                     if(student == false){
                         MemberBean memberBean = FileDB.getLoginAdmin(getApplicationContext());
 

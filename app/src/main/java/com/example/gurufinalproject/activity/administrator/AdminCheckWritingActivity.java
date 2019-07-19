@@ -9,15 +9,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gurufinalproject.R;
-import com.example.gurufinalproject.activity.LoginActivity;
-import com.example.gurufinalproject.activity.NoteAdapter;
-import com.example.gurufinalproject.activity.NoteDetailActivity;
 import com.example.gurufinalproject.bean.MemberBean;
 import com.example.gurufinalproject.bean.NoteBean;
 import com.example.gurufinalproject.db.FileDB;

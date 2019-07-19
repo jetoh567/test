@@ -1,6 +1,5 @@
 package com.example.gurufinalproject.activity;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -13,18 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gurufinalproject.R;
 import com.example.gurufinalproject.bean.NoteBean;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-
-import org.w3c.dom.Text;
 
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.URL;
-import java.util.List;
-
-import static com.example.gurufinalproject.activity.NoteWriteActivity.STORAGE_DB_URL;
 
 public class NoteDetailActivity extends AppCompatActivity {
 
