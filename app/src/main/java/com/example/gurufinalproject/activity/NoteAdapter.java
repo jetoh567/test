@@ -62,7 +62,6 @@ public class NoteAdapter extends BaseAdapter {
 
         final NoteBean noteBean = mNoteList.get(i);
 
-        //imgTitle 이미지를 표시할 때는 원격서버에 있는 이미지임으로 비동기로 표시한다.
         noteDetail.setText("신고 내용 : " + noteBean.detail);
         noteTitle.setText("신고 위치 : " + noteBean.location);
         noteDate.setText("신고 날짜 : " + noteBean.regdate);
