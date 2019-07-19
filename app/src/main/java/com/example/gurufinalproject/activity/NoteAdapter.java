@@ -62,14 +62,14 @@ public class NoteAdapter extends BaseAdapter {
 
         final NoteBean noteBean = mNoteList.get(i);
 
-        noteDetail.setText("신고 내용 : " + noteBean.detail);
-        noteTitle.setText("신고 위치 : " + noteBean.location);
-        noteDate.setText("신고 날짜 : " + noteBean.regdate);
+        noteDetail.setText(noteBean.detail);
+        noteTitle.setText(noteBean.location);
+        noteDate.setText("신고 날짜 " + noteBean.regdate);
 
         if(noteBean.check == false) {
             noteCheck.setText("완료 안됨");
         }else{
-            noteCheck.setText("완료 날짜 : "+noteBean.findate);
+            noteCheck.setText("처리 "+noteBean.findate);
         }
 
         view.setOnClickListener(new View.OnClickListener() {

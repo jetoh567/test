@@ -11,20 +11,45 @@
         android:orientation="vertical"
         >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="내용  "
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="#AB3030"/>
             <TextView
                 android:id="@+id/noteDetail"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="3"
-                android:text="신고 내용"
-                android:textSize="20dp"/>
-        <TextView
-            android:id="@+id/noteLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18dp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3.5"
-            android:text="신고 위치"
-            android:textSize="15dp" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="위치  "
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="#AB3030"/>
+            <TextView
+                android:id="@+id/noteLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="18dp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -40,16 +65,16 @@
                 android:layout_weight="1"
                 android:text="신고 날짜"
                 android:textAlignment="viewEnd"
-                android:textSize="10dp" />
+                android:textSize="12dp" />
 
             <TextView
                 android:id="@+id/noteCheck"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="완료 여부"
+                android:text="처리 "
                 android:textAlignment="viewEnd"
 
-                android:textSize="10dp" />
+                android:textSize="12dp" />
 
         </LinearLayout>
 
