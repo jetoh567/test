@@ -20,13 +20,13 @@ public class NoticeDetailActivityM extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice_detail_member);
 
-        title = findViewById(R.id.txtNoiceTitleM);
-        detail = findViewById(R.id.txtNoticeDetailM);
-        writer = findViewById(R.id.txtNoticeWriterM);
-        date = findViewById(R.id.txtNoticeDateM);
-        open = findViewById(R.id.txtNoticeOpenM);
+        title = findViewById(R.id.txtNoiceTitleMe);
+        detail = findViewById(R.id.txtNoticeDetailMe);
+        writer = findViewById(R.id.txtNoticeWriterMe);
+        date = findViewById(R.id.txtNoticeDateMe);
+        open = findViewById(R.id.txtNoticeOpenMe);
 
-        final NoticeBean notice  = (NoticeBean) getIntent().getSerializableExtra("notice");
+        final NoticeBean notice  = (NoticeBean) getIntent().getSerializableExtra("noticeM");
 
         title.setText(notice.noticeTitle);
         detail.setText(notice.noticeDetail);
