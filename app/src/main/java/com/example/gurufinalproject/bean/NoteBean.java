@@ -1,7 +1,5 @@
 package com.example.gurufinalproject.bean;
 
-import android.graphics.Bitmap;
-
 import java.io.Serializable;
 
 public class NoteBean implements Serializable {
