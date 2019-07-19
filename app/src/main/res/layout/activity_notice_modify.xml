@@ -2,26 +2,29 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.NoteDetailActivity"
     android:orientation="vertical"
     android:weightSum="10"
     android:padding="15dp">
 
-    <TextView
-        android:id="@+id/txtNoiceTitle"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="제목"
-        android:layout_gravity="center"
-        android:textSize="30dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_weight="2"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/edtNoticeTitleM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제목"
+            android:textSize="30dp"
+            />
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/txtNoticeWriter"
+        android:id="@+id/txtNoticeWriterM"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="0.5"
@@ -29,18 +32,18 @@
         android:layout_marginRight="10dp"
         android:layout_gravity="right"/>
 
-    <TextView
-        android:id="@+id/txtNoticeDetail"
+    <EditText
+        android:id="@+id/edtNoticeDetailM"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5.5"
+        android:layout_weight="4.5"
         android:text="공지사항"
         android:layout_margin="10dp"
         android:textSize="20dp"
         android:layout_gravity="center"/>
 
     <TextView
-        android:id="@+id/txtNoticeDate"
+        android:id="@+id/txtNoticeDateM"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
@@ -48,7 +51,7 @@
         android:textSize="15dp"
         android:layout_gravity="center"/>
     <TextView
-        android:id="@+id/txtNoticeOpen"
+        android:id="@+id/txtNoticeOpenM"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.5"
@@ -57,14 +60,13 @@
         android:layout_gravity="center"/>
 
     <Button
-        android:id="@+id/btnNoticeModify"
+        android:id="@+id/btnNoticeDone"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:text="수정하러 가기"
+        android:text="저장"
         android:layout_gravity="center"
         android:textColor="#ffffff"
         android:textStyle="bold"
         android:background="#AB3030"/>
-
 </LinearLayout>

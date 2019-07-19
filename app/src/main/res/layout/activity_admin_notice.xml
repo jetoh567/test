@@ -2,7 +2,6 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
@@ -11,8 +10,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:text="상황실에서의 공지"
+        android:layout_weight="0.08"
+        android:text="상황실 공지"
         android:textSize="30dp"
         android:layout_gravity="center"
         android:layout_marginTop ="10dp"/>
@@ -25,7 +24,7 @@
         android:layout_gravity="center">
 
         <TextView
-            android:id="@+id/txtAdminName"
+            android:id="@+id/txtAdminNameN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="textview"
@@ -33,7 +32,7 @@
             android:layout_marginRight="10dp"/>
 
         <TextView
-            android:id="@+id/txtAdminPart"
+            android:id="@+id/txtAdminPartN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="textview"
@@ -41,7 +40,7 @@
             android:layout_marginRight="10dp"/>
 
         <TextView
-            android:id="@+id/txtAdminNum"
+            android:id="@+id/txtAdminNumN"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="textview"
@@ -51,7 +50,7 @@
 
 
     <Button
-        android:id="@+id/btnAdminLogout2"
+        android:id="@+id/btnNoticeLogout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.1"

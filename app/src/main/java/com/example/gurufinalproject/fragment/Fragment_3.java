@@ -55,7 +55,6 @@ public class Fragment_3 extends Fragment {
             });
 
             return view;
-            // 메인페이지로 가는 버튼
         }// end Oncreate
 
 

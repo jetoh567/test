@@ -7,25 +7,35 @@
     android:layout_height="match_parent"
     tools:context=".activity.NoteDetailActivity"
     android:orientation="vertical"
-    android:weightSum="10">
+    android:weightSum="10"
+    android:padding="10dp">
 
     <EditText
-        android:id="@+id/EdtNoticeTitle"
+        android:id="@+id/edtNoticeTitle"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="2"
         android:hint="제목을 입력하세요."
         android:textSize="40dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"/>
-
-    <EditText
-        android:id="@+id/EdtNoticeWriting"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
+        android:layout_weight="0.5"
+        android:layout_marginLeft="50dp"
+        android:textColor="#B34949"
+        android:text="제목은 한번에 알아볼 수 있는 내용으로 선정"
+        />
+
+    <EditText
+        android:id="@+id/edtNoticeDetail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6.5"
         android:hint="공지사항을 작성해주세요."
         android:textSize="20dp"
-        android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center"/>
 
     <LinearLayout

@@ -193,6 +193,7 @@ public class NoteWriteActivity extends AppCompatActivity {
         Toast.makeText(this,"게시물이 등록되었습니다.",Toast.LENGTH_SHORT).show();
         finish();
     }
+
     public static String getUserIdFromUUID (String userEmail){
         long val = UUID.nameUUIDFromBytes(userEmail.getBytes()).getMostSignificantBits();
         return String.valueOf(val);
@@ -233,7 +234,6 @@ public class NoteWriteActivity extends AppCompatActivity {
         File file = new File(mediaStorageDir.getPath() + File.separator + "IMG_" + timeStamp + ".jpg");
 
         mPhotoPath = file.getAbsolutePath();
-
         return file;
     }
 
@@ -264,7 +264,6 @@ public class NoteWriteActivity extends AppCompatActivity {
 
         //줄어든 이미지를 다시 저장한다
         saveBitmapToFileCache(resizedBmp, mPhotoPath);
-
     }
 
     private void saveBitmapToFileCache(Bitmap bitmap, String strFilePath) {

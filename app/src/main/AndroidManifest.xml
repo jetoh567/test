@@ -16,7 +16,8 @@
         android:roundIcon="@drawable/signiture"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.ElseActivity"></activity>
+        <activity android:name=".activity.administrator.NoticeModifyActivity"></activity>
+        <activity android:name=".activity.ElseActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -39,7 +40,7 @@
         <activity android:name=".activity.administrator.AdminNoticeActivity" />
         <activity android:name=".activity.administrator.NoticeDetailActivity" />
         <activity android:name=".activity.administrator.NoticeWriteActivity" />
-        <activity android:name=".activity.administrator.NoteAdminActivity"/>
+        <activity android:name=".activity.administrator.NoteAdminActivity" />
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
