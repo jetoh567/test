@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.example.gurufinalproject.R;
 import com.example.gurufinalproject.activity.ElseActivity;
 import com.example.gurufinalproject.activity.NoteWriteActivity;
+import com.example.gurufinalproject.activity.NoticeDetailActivityM;
 import com.example.gurufinalproject.bean.NoticeBean;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -57,7 +58,17 @@ public class FragmentMemberMain extends Fragment {
                 }else{
                     alert.setText(notice.noticeTitle);
                 }
-
+                final NoticeBean noticeBean = notice;
+                if(noticeBean!=null){
+                    alert.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent i = new Intent(getContext(), NoticeDetailActivityM.class);
+                            i.putExtra("noticeM",noticeBean);
+                            startActivity(i);
+                        }
+                    });
+                }
             }
 
             @Override
