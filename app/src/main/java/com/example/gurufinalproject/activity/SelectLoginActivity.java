@@ -57,7 +57,7 @@ public class SelectLoginActivity extends AppCompatActivity {
                         Toast.makeText(getBaseContext(),"Google 로그인 인증 후 회원가입 가능합니다.",Toast.LENGTH_SHORT).show();
                         return;
                     }
-                    
+
                     findAdmin = FileDB.getFindAdmin(getBaseContext(),account);
                     findmember= FileDB.getFindMember(getBaseContext(),account);
 

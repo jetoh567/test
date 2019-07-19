@@ -9,16 +9,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="회원가입"
-        android:textSize="30dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        />
+        android:layout_marginTop="70dp"
+        android:text="회원가입"
+        android:textSize="40dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp">
 
         <TextView
             android:id="@+id/txtGoogleId"
@@ -26,7 +28,8 @@
             android:layout_height="wrap_content"
             android:layout_margin="13dp"
             android:text="Google Id : "
-            android:textSize="17dp" />
+            android:textSize="18dp"
+            android:textStyle="bold"/>
 
 
         <LinearLayout
@@ -38,14 +41,21 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="13dp"
                 android:textStyle="bold"
-                android:text="이름: "
-                android:textSize="17dp" />
+                android:text="이름"
+                android:textSize="18dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
             <EditText
                 android:id="@+id/edtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"/>
-
+                android:layout_margin="10dp"
+                android:background="@drawable/boarder"
+                android:ems="12"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:layout_gravity="left|center"/>
         </LinearLayout>
 
         <LinearLayout
@@ -57,14 +67,21 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="13dp"
                 android:textStyle="bold"
-                android:text="학번: "
-                android:textSize="17dp" />
+                android:text="학번"
+                android:textSize="18dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
             <EditText
                 android:id="@+id/edtUserNum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"/>
-
+                android:layout_margin="10dp"
+                android:background="@drawable/boarder"
+                android:ems="12"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:layout_gravity="left|center"/>
         </LinearLayout>
 
 
@@ -85,24 +102,33 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="13dp"
                 android:textStyle="bold"
-                android:text="전화번호: "
-                android:textSize="17dp" />
+                android:text="전화번호"
+                android:textSize="18dp" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
             <EditText
                 android:id="@+id/edtPhoneNum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"/>
-
+                android:layout_margin="10dp"
+                android:background="@drawable/boarder"
+                android:ems="12"
+                android:inputType="textMultiLine|textNoSuggestions"
+                android:layout_gravity="left|center"/>
         </LinearLayout>
 
         <Button
             android:id="@+id/btnCreate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="회원가입하기"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
             android:background="#AB3030"
-            android:layout_gravity="center"/>
+            android:text="회원가입"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
     </LinearLayout>
 </LinearLayout>

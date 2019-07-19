@@ -11,7 +11,7 @@
     android:padding="15dp">
 
     <TextView
-        android:id="@+id/txtNoiceTitleM"
+        android:id="@+id/txtNoiceTitleMe"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -21,7 +21,7 @@
         android:layout_marginTop="20dp"/>
 
     <TextView
-        android:id="@+id/txtNoticeWriterM"
+        android:id="@+id/txtNoticeWriterMe"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight="0.5"
@@ -30,7 +30,7 @@
         android:layout_gravity="right"/>
 
     <TextView
-        android:id="@+id/txtNoticeDetailM"
+        android:id="@+id/txtNoticeDetailMe"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5.5"
@@ -40,7 +40,7 @@
         android:layout_gravity="center"/>
 
     <TextView
-        android:id="@+id/txtNoticeDateM"
+        android:id="@+id/txtNoticeDateMe"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
@@ -48,7 +48,7 @@
         android:textSize="15dp"
         android:layout_gravity="center"/>
     <TextView
-        android:id="@+id/txtNoticeOpenM"
+        android:id="@+id/txtNoticeOpenMe"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2.5"

@@ -68,7 +68,7 @@ public class AdminCheckWritingActivity extends AppCompatActivity {
         number.setText("연락처 : "+memberBean.phoneNum);
 
 
-        findViewById(R.id.btnNoteLogout).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btnAdminLogout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                finish();

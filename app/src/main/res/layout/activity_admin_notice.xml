@@ -28,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="textview"
-            android:textSize="10dp"
+            android:textSize="15dp"
             android:layout_marginRight="10dp"/>
 
         <TextView
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="textview"
-            android:textSize="10dp"
+            android:textSize="15dp"
             android:layout_marginRight="10dp"/>
 
         <TextView
@@ -44,10 +44,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="textview"
-            android:textSize="10dp" />
+            android:textSize="15dp" />
 
     </LinearLayout>
-
 
     <Button
         android:id="@+id/btnNoticeLogout"
@@ -60,7 +59,6 @@
         android:textStyle="bold"
         android:background="#AB3030"
         android:layout_marginBottom="5dp"/>
-
 
     <Button
         android:id="@+id/btnNoticeWrite"

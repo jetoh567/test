@@ -21,7 +21,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.firstproject_06"
+            android:authorities="com.example.gurufinalproject"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
@@ -32,6 +32,7 @@
             android:name=".activity.MemberNavigationActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".activity.NoteWriteActivity" />
+        <activity android:name=".activity.NoticeDetailActivityM"/>
         <activity android:name=".activity.NoteDetailActivity" />
         <activity android:name=".activity.AdminJoinActivity" />
         <activity android:name=".activity.MemberJoinActivity" />
