@@ -29,6 +29,7 @@ public class SelectLoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_login);
 
         findViewById(R.id.btnGoogleSignIn).setOnClickListener(mBtnClick);
+        findViewById(R.id.fake_btnSignIn).setOnClickListener(mBtnClick);
         findViewById(R.id.btnAdmin).setOnClickListener(mBtnClick);
         findViewById(R.id.btnMember).setOnClickListener(mBtnClick);
 
@@ -47,6 +48,9 @@ public class SelectLoginActivity extends AppCompatActivity {
         public void onClick(View view) {
             switch(view.getId()){
                 case R.id.btnGoogleSignIn:
+                    googleSignIn();
+                    break;
+                case R.id.fake_btnSignIn:
                     googleSignIn();
                     break;
                 case R.id.btnAdmin:

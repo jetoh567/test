@@ -32,7 +32,7 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="200dp"
+
             android:layout_gravity="center">
             <com.google.android.gms.common.SignInButton
                 android:id="@+id/btnLogin"
@@ -49,29 +49,22 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:background="#AB3030"
-                android:text="구글로그인"
+                android:text="로그인"
                 android:textColor="#ffffff"
                 android:textStyle="bold" />
         </FrameLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnJoin"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_margin="0dp"
             android:background="#AB3030"
             android:text="회원가입"
             android:textColor="#ffffff"
-            android:textStyle="bold" />
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"/>
+
     </LinearLayout>
 
 </LinearLayout>

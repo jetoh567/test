@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginTop="200dp"
     >
     <TextView
         android:layout_width="wrap_content"
@@ -13,30 +14,76 @@
         android:textSize="30dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"/>
-    <com.google.android.gms.common.SignInButton
-        android:id="@+id/btnGoogleSignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center">
+    <FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/btnGoogleSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center">
+        </com.google.android.gms.common.SignInButton>
+        <Button
+            android:id="@+id/fake_btnSignIn"
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_marginTop="17dp"
+            android:background="#AB3030"
+            android:text="구글로그인"
+            android:textColor="#ffffff"
+            android:textStyle="bold" />
+    </FrameLayout>
 
-    </com.google.android.gms.common.SignInButton>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp">
-        <Button
-            android:id="@+id/btnAdmin"
-            android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="관리자"
-            />
-        <Button
-            android:id="@+id/btnMember"
-            android:layout_width="match_parent"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:id="@+id/btnMember"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:paddingRight="15dp"
+                app:srcCompat="@drawable/student" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingRight="15dp"
+                android:paddingTop="10dp"
+                android:text="회원"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="학생"/>
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/btnAdmin"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:paddingLeft="15dp"
+                app:srcCompat="@drawable/adm" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingTop="10dp"
+                android:text="관리자"
+                android:textSize="20dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

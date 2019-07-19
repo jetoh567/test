@@ -25,7 +25,9 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.FileProvider;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.bean.MemberBean;
 import com.example.gurufinalproject.bean.NoteBean;
+import com.example.gurufinalproject.db.FileDB;
 import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -80,7 +82,6 @@ public class NoteWriteActivity extends AppCompatActivity {
                 Manifest.permission.CAMERA
         }, 0);
 
-        checkPermission();
         findViewById(R.id.btnAddPic).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -167,6 +168,8 @@ public class NoteWriteActivity extends AppCompatActivity {
 
         noteBean.location = mEdtLocation.getText().toString();
         noteBean.detail = mEdtDetail.getText().toString();
+        MemberBean loginMember = FileDB.getLoginMember(getBaseContext());
+        noteBean.userName = loginMember.name;
 
          noteBean.imgUri = imgUri;
          noteBean.imgName = imgName;
@@ -194,31 +197,6 @@ public class NoteWriteActivity extends AppCompatActivity {
         long val = UUID.nameUUIDFromBytes(userEmail.getBytes()).getMostSignificantBits();
         return String.valueOf(val);
     }
-
-    private void checkPermission() {
-        // Self 권한 체크
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this,
-                Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
-                || ContextCompat.checkSelfPermission(this,
-                Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED)
-        {
-            // 권한동의 체크
-            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    || ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-                    || ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)
-            ) {
-
-            } else {
-                // 권한동의 팝업 표시 요청
-                ActivityCompat.requestPermissions(this,
-                        new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                                Manifest.permission.READ_EXTERNAL_STORAGE,
-                                Manifest.permission.CAMERA}, 1111);
-            }
-        }
-    } // End checkPermission
 
     private void takePicture() {
 

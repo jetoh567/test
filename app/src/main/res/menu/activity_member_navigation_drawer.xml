@@ -17,7 +17,7 @@
             android:title="내 신고글"/>
         <item
             android:id="@+id/nav_all"
-            android:title="신고 상황 설명 및 글보기"/>
+            android:title="신고 상황 설명 및 글 보기"/>
         <item
             android:id="@+id/nav_alert"
             android:title="공지사항"/>

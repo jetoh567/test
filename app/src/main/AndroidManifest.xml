@@ -39,6 +39,7 @@
         <activity android:name=".activity.administrator.AdminNoticeActivity" />
         <activity android:name=".activity.administrator.NoticeDetailActivity" />
         <activity android:name=".activity.administrator.NoticeWriteActivity" />
+        <activity android:name=".activity.administrator.NoteAdminActivity"/>
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
