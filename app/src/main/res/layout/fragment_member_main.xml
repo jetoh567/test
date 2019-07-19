@@ -8,20 +8,20 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="134dp"
-        android:layout_height="85dp"
+        android:layout_width="111dp"
+        android:layout_height="69dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         app:srcCompat="@drawable/signiture" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="291dp"
-        android:layout_height="75dp"
+        android:layout_width="273dp"
+        android:layout_height="62dp"
         android:layout_gravity="center"
         android:layout_marginLeft="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="50dp"
         app:srcCompat="@drawable/logo" />
 
     <LinearLayout

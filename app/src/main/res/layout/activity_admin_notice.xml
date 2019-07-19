@@ -46,31 +46,30 @@
             android:layout_height="wrap_content"
             android:text="textview"
             android:textSize="15dp" />
-
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnAdminLogout2"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:text="로그아웃"
+        android:id="@+id/btnNoticeWrite"
+        android:layout_width="350dp"
+        android:layout_height="49dp"
         android:layout_gravity="center"
-        android:textColor="#ffffff"
-        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
         android:background="#AB3030"
-        android:layout_marginBottom="5dp"/>
+        android:text="공지작성"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
 
     <Button
-        android:id="@+id/btnNoticeWrite"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:text="공지글 작성하기"
+        android:id="@+id/btnAdminLogout2"
+        android:layout_width="350dp"
+        android:layout_height="49dp"
         android:layout_gravity="center"
+        android:background="#AB3030"
+        android:text="로그아웃"
         android:textColor="#ffffff"
         android:textStyle="bold"
-        android:background="#AB3030"/>
+        android:layout_marginBottom="20dp"/>
 
     <ListView
         android:id="@+id/lstNotice"

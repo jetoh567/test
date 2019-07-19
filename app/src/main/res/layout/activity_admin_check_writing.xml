@@ -51,11 +51,13 @@
 
     <Button
         android:id="@+id/btnAdminLogout1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
+        android:layout_width="350dp"
+        android:layout_height="49dp"
+        android:layout_gravity="center"
+        android:background="#AB3030"
         android:text="로그아웃"
-        android:layout_gravity="center"/>
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
 
     <ListView
         android:layout_width="match_parent"
