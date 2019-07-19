@@ -74,14 +74,12 @@
             android:id="@+id/edtNoteLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:padding="10dp"
-            android:singleLine="true"
             android:layout_margin="10dp"
             android:background="@drawable/boarder"
-            android:ems="13"
+            android:ems="15"
             android:inputType="textMultiLine|textNoSuggestions"
-            android:layout_gravity="left|center"/>
+            android:layout_gravity="left|center"
+            />
     </LinearLayout>
 
     <LinearLayout
@@ -105,15 +103,12 @@
             android:id="@+id/edtNoteDetail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:padding="10dp"
-            android:singleLine="true"
             android:layout_margin="10dp"
             android:background="@drawable/boarder"
-            android:ems="13"
+            android:ems="15"
             android:inputType="textMultiLine|textNoSuggestions"
-            android:lines="5"
-            android:layout_gravity="left|center"/>
+            android:layout_gravity="left|center"
+            android:lines="7" />
     </LinearLayout>
 
     <CheckBox

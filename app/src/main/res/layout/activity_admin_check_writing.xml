@@ -50,16 +50,20 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnAdminLogout1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
+        android:id="@+id/btnAdminLogout"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:text="로그아웃"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="#AB3030"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
 
     <ListView
+        android:id="@+id/noteList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.75" />
+        android:layout_weight="0.8" />
 
 </LinearLayout>
