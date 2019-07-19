@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.activity.NoticeDetailActivityM;
 import com.example.gurufinalproject.activity.administrator.NoticeDetailActivity;
 import com.example.gurufinalproject.bean.NoticeBean;
 import com.google.firebase.database.DataSnapshot;
@@ -117,7 +118,7 @@ public class FragmentMemberAlert extends Fragment {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i = new Intent(mContext, NoticeDetailActivity.class);
+                    Intent i = new Intent(mContext, NoticeDetailActivityM.class);
                     i.putExtra("notice",noticeBean);
                     mContext.startActivity(i);
                 }
