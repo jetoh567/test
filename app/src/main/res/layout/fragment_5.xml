@@ -19,7 +19,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="교내 종합상황실에서 연락을 받지 않을 경우 \n경비실로 연락 부탁드립니다. \n: 02-970-5185(남문 경비실), \n: 02-970-5191(도서관 경비실), \n: 02-970-5194(샬롬기숙사 경비실)"
+        android:text="교내 종합상황실에서 연락을 받지 않을 경우 \n경비실로 연락 부탁드립니다. \n02-970-5185(남문 경비실), \n02-970-5191(도서관 경비실), \n02-970-5194(샬롬하우스 경비실)"
         android:textSize="18dp"
         android:padding="10dp"/>
     <TextView

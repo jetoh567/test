@@ -25,7 +25,7 @@
         android:id="@+id/txtDetailW"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="메인 페이지에서 전화를 걸 경우, \n02-970-1000 번으로 연락이 갑니다. \n종합상황실에서 빠르게 대응할 것 입니다."
+        android:text="메인 페이지에서 전화를 걸 경우, \n02-970-1000 번으로 연락이 갑니다. \n종합상황실에서 빠르게 대응할 것입니다."
         android:textSize="15dp"
         android:padding="10dp"/>
 

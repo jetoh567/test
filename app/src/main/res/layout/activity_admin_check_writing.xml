@@ -2,6 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="1"
@@ -28,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="textview"
-            android:textSize="10dp"
+            android:textSize="15dp"
             android:layout_marginRight="10dp"/>
 
         <TextView
@@ -36,7 +37,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="textview"
-            android:textSize="10dp"
+            android:textSize="15dp"
             android:layout_marginRight="10dp"/>
 
         <TextView
@@ -44,22 +45,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="textview"
-            android:textSize="10dp" />
+            android:textSize="15dp" />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnNoteLogout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.08"
+        android:id="@+id/btnAdminLogout"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
         android:text="로그아웃"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="#AB3030"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/noteList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.77" />
+        android:layout_weight="0.8" />
 
 </LinearLayout>
