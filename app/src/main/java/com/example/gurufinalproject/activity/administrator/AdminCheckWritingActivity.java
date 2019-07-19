@@ -161,13 +161,13 @@ public class AdminCheckWritingActivity extends AppCompatActivity {
 
             final NoteBean noteBean = mNoteList.get(i);
 
-            //imgTitle 이미지를 표시할 때는 원격서버에 있는 이미지임으로 비동기로 표시한다.
-            noteDetail.setText("신고 내용 : " + noteBean.detail);
-            noteTitle.setText("신고 위치 : " + noteBean.location);
-            noteDate.setText("신고 날짜 : " + noteBean.regdate);    if(noteBean.check == false) {
+            noteDetail.setText(noteBean.detail);
+            noteTitle.setText(noteBean.location);
+            noteDate.setText("신고 날짜 : " + noteBean.regdate);
+            if(noteBean.check == false) {
                 noteCheck.setText("완료 안됨");
             }else{
-                noteCheck.setText("완료 날짜 : "+noteBean.findate);
+                noteCheck.setText("처리: "+noteBean.findate);
             }
 
             view.setOnClickListener(new View.OnClickListener() {
