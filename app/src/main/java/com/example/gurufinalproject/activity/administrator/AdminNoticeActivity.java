@@ -161,7 +161,7 @@ public class AdminNoticeActivity extends AppCompatActivity {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent i = new Intent(mContext, NoticeDetailActivityM.class);
+                    Intent i = new Intent(mContext, NoticeDetailActivity.class);
                     i.putExtra("notice",noticeBean);
                     mContext.startActivity(i);
                 }
