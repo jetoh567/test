@@ -333,5 +333,4 @@ public class NoteWriteActivity extends AppCompatActivity {
         }
     }
 
-
 }
