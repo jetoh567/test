@@ -97,17 +97,17 @@ public class AdminCheckWritingActivity extends AppCompatActivity {
                     switch (memberBean.userNum){
                         case 1:
                             if(note.department == 1){
-                                noteList.add(note);
+                                noteList.add(0,note);
                             }
                             break;
                         case 2:
                             if(note.department == 2){
-                                noteList.add(note);
+                                noteList.add(0,note);
                             }
                             break;
                         case 3:
                             if(note.department == 3){
-                                noteList.add(note);
+                                noteList.add(0,note);
                             }
                             break;
                     }
