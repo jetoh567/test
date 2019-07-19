@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GuruFinalProject</string>
+    <string name="app_name">신고하SWU</string>
 
     <string-array name="departments">
         <item>상황실</item>

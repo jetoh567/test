@@ -43,7 +43,6 @@ public class Fragment_2 extends Fragment {
         mAdapter = new NoteAdapter(getContext(),noteList);
         mLstNote.setAdapter(mAdapter);
 
-
         return view;
     }// end Oncreate
 
@@ -76,8 +75,6 @@ public class Fragment_2 extends Fragment {
 
             }
         });
-
-
 
     }
 

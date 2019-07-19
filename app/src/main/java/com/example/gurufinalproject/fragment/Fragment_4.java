@@ -24,7 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Fragment_4 extends Fragment {
-
     private FirebaseDatabase mFirebaseDB = FirebaseDatabase.getInstance();
     private ListView mLstNote;
     public NoteAdapter mAdapter;
@@ -42,7 +41,6 @@ public class Fragment_4 extends Fragment {
         mLstNote.setAdapter(mAdapter);
 
         return view;
-        // 메인페이지로 가는 버튼
     }// end Oncreate
 
     @Override
@@ -74,9 +72,6 @@ public class Fragment_4 extends Fragment {
             }
         });
 
-
-
     }
-
 
 }// end class
