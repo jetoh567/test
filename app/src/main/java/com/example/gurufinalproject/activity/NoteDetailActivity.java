@@ -3,6 +3,7 @@ package com.example.gurufinalproject.activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -27,7 +28,7 @@ import static com.example.gurufinalproject.activity.NoteWriteActivity.STORAGE_DB
 
 public class NoteDetailActivity extends AppCompatActivity {
 
-    private TextView writer, location, content, regDate, finDate, checkWho;
+    private TextView writer,access, location, content, regDate, finDate, checkWho;
     private ImageView detailImg;
 
     @Override
@@ -42,13 +43,19 @@ public class NoteDetailActivity extends AppCompatActivity {
         finDate = findViewById(R.id.detailFinDate);
         checkWho = findViewById(R.id.detailCheckWho);
         detailImg = findViewById(R.id.detailImg);
+        access = findViewById(R.id.detailAccess);
 
         NoteBean note  = (NoteBean) getIntent().getSerializableExtra("detail");
 
         writer.setText("신고자 : "+note.userName);
         location.setText("신고 위치 : " +note.location);
         content.setText("신고 내용 : " + note.detail);
-
+        if(note.access == true){
+            access.setText("비공개 글");
+            access.setTextColor(Color.rgb(255,0,0));
+        }else{
+            access.setText("공개 글");
+        }
         if(note.check == true){
             regDate.setText("신고 날짜 : "+note.regdate);
             finDate.setText("완료 날짜 : " + note.findate);
@@ -60,7 +67,6 @@ public class NoteDetailActivity extends AppCompatActivity {
         }
 
         if(note.imgName != " " && note.imgUri != " "){
-
             try {
                     new DownloadImgTask(detailImg).execute(new URL(note.imgUri));
             }catch(Exception e){

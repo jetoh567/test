@@ -11,32 +11,40 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gurufinalproject.R;
 import com.example.gurufinalproject.activity.LoginActivity;
+import com.example.gurufinalproject.activity.NoteAdapter;
+import com.example.gurufinalproject.activity.NoteWriteActivity;
 import com.example.gurufinalproject.bean.MemberBean;
+import com.example.gurufinalproject.bean.NoteBean;
 import com.example.gurufinalproject.bean.NoticeBean;
 import com.example.gurufinalproject.db.FileDB;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AdminNoticeActivity extends AppCompatActivity {
 
+    private FirebaseDatabase mFirebaseDB = FirebaseDatabase.getInstance();
     private ListView mLstNotice;
-    public ListAdapter adapter;
+    public NoticeAdapter mAdapter;
     public List<NoticeBean> noticeList = new ArrayList<>();
-    public final static int Saved = 1004;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_notice);
 
-        TextView txtAdminName = findViewById(R.id.txtAdminName);
-        TextView txtAdminPart = findViewById(R.id.txtAdminPart);
-        TextView txtAdminNum = findViewById(R.id.txtAdminNum);
+        TextView txtAdminName = findViewById(R.id.txtAdminNameN);
+        TextView txtAdminPart = findViewById(R.id.txtAdminPartN);
+        TextView txtAdminNum = findViewById(R.id.txtAdminNumN);
 
         MemberBean memberBean = FileDB.getLoginAdmin(this);
 
@@ -59,111 +67,111 @@ public class AdminNoticeActivity extends AppCompatActivity {
         txtAdminPart.setText("근무부서 : " + department);
         txtAdminNum.setText("연락처 : " +memberBean.phoneNum);
 
-        findViewById(R.id.btnAdminLogout2).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.btnNoticeLogout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),
-                        LoginActivity.class);
-                startActivity(intent);
-
-                Toast.makeText(getApplicationContext(), "로그아웃 성공..", Toast.LENGTH_SHORT).show();
-
+              finish();
             }
         });
 
         findViewById(R.id.btnNoticeWrite).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), NoticeWriteActivity.class);
-                startActivityForResult(intent,Saved);
+                Intent i = new Intent(getBaseContext(), NoticeWriteActivity.class);
+                startActivity(i);
             }
         });
 
         mLstNotice = findViewById(R.id.lstNotice);
+        mAdapter = new NoticeAdapter(this,noticeList);
+        mLstNotice.setAdapter(mAdapter);
 
     }// end onCreate
 
     @Override
     public void onResume() {
         super.onResume();
+        mFirebaseDB.getReference().child("Notice").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                //데이터 받아와서 리스트에 선언
+                noticeList.clear();
 
-        noticeList = FileDB.getNoticeList(getApplicationContext());
-        //adapter 생성 및 적용
-        adapter = new ListAdapter(noticeList, getApplicationContext());
-        //list view 에 adapter 설정
-        mLstNotice.setAdapter(adapter);
+                for(DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    NoticeBean notice = snapshot.getValue(NoticeBean.class);
+                   noticeList.add(notice);
+                }
+
+                //바뀌는 데이터로 refresh 한다.
+                if(mAdapter!=null){
+                    mAdapter.notifyDataSetChanged();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }// end onResume
 
-    class ListAdapter extends BaseAdapter {
-        List<NoticeBean> noticeList; // 원본 데이터
-        Context mContext;
-        LayoutInflater inflater;
+    public class NoticeAdapter extends BaseAdapter {
 
-        public ListAdapter( List<NoticeBean> noticeList , Context context){
-            this.noticeList = noticeList;
-            this.mContext = context;
-            this.inflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
-        }
+        private Context mContext;
+        private List<NoticeBean> mNoticeList;
 
-        public void setNoticeList(List<NoticeBean> noticeList){
-            //items 갱신을 위한 함수
-            this.noticeList = noticeList;
+
+        public NoticeAdapter(Context context, List<NoticeBean> noticeList) {
+            mContext = context;
+            mNoticeList = noticeList;
         }
 
         @Override
         public int getCount() {
-            return noticeList.size();
+            return mNoticeList.size();
         }
 
         @Override
-        public Object getItem(int position) {
-            return noticeList.get(position);
+        public Object getItem(int i) {
+            return mNoticeList.get(i);
         }
 
         @Override
-        public long getItemId(int position) {
-            return position;
+        public long getItemId(int i) {
+            return i;
         }
 
         @Override
-        public View getView(final int position, View convertView, ViewGroup parent) {
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            final LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            convertView = inflater.inflate(R.layout.notice_form,null);
+            view = inflater.inflate(R.layout.notice_form,null);
 
-            //객체 획득
-            TextView noticeTitle = convertView.findViewById(R.id.NoticeTitle);
-            TextView noticeDetail = convertView.findViewById(R.id.NoticeDetail);
-            TextView noticeWriter = convertView.findViewById(R.id.NoticeWriter);
+            TextView title, detail, writer, date;
 
-            //i 번째 객체 획득
-            final NoticeBean notice = noticeList.get(position);
+            title = view.findViewById(R.id.NoticeTitle);
+            detail = view.findViewById(R.id.NoticeDetail);
+            writer = view.findViewById(R.id.NoticeWriter);
+            date = view.findViewById(R.id.NoticeDate);
 
-            //ui 에 적용
-            noticeTitle.setText(notice.noticeTitle);
-            noticeDetail.setText(notice.noticeDetail);
-            noticeWriter.setText(notice.noticeWriter);
+            final NoticeBean noticeBean = mNoticeList.get(i);
 
-//            //수정
-//            convertView.findViewById(R.id.btnNoticeModify).setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View view) {
-//                    Intent intent = new Intent(getActivity(),ModifyMemoActivity.class);
-//                    intent.putExtra("noticeId", notice.noticeId);
-//                    startActivity(intent);
-//                }
-//            });
+            title.setText(noticeBean.noticeTitle);
+            detail.setText(noticeBean.noticeDetail);
+            writer.setText("작성자 : "+noticeBean.noticeWriter);
+            date.setText("작성 날짜 : "+noticeBean.regDate);
 
-            //상세
-            convertView.findViewById(R.id.btnNoticeDetail).setOnClickListener(new View.OnClickListener() {
+            view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(getApplicationContext(),NoticeDetailActivity.class);
-                    intent.putExtra("noticeId", notice.noticeId);
-                    startActivity(intent);
+                    Intent i = new Intent(getBaseContext(),NoticeDetailActivity.class);
+                    i.putExtra("notice",noticeBean);
+                    startActivity(i);
                 }
             });
 
-            return convertView;
+            return view;
         }
     }
 

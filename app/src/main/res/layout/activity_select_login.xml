@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="200dp"
     >
     <TextView
         android:layout_width="wrap_content"
@@ -24,6 +23,7 @@
             android:layout_marginTop="30dp"
             android:layout_gravity="center">
         </com.google.android.gms.common.SignInButton>
+
         <Button
             android:id="@+id/fake_btnSignIn"
             android:layout_width="350dp"
