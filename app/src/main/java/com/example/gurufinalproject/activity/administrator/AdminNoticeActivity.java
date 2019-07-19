@@ -18,6 +18,10 @@ import com.example.gurufinalproject.activity.NoticeDetailActivityM;
 import com.example.gurufinalproject.bean.MemberBean;
 import com.example.gurufinalproject.bean.NoticeBean;
 import com.example.gurufinalproject.db.FileDB;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -46,26 +50,13 @@ public class AdminNoticeActivity extends AppCompatActivity {
 
         String department ="" ;
         txtAdminName.setText("이름 : " + memberBean.name);
-        switch(memberBean.userNum){
-            case 0:
-                department = "상황실";
-                break;
-            case 1:
-                department = "학생 지원실";
-                break;
-            case 2:
-                department = "기관실";
-                break;
-            case 3:
-                department = "경비실";
-                break;
-        }
-        txtAdminPart.setText("근무부서 : " + department);
+        txtAdminPart.setText("근무부서 : 상황실");
         txtAdminNum.setText("연락처 : " +memberBean.phoneNum);
 
         findViewById(R.id.btnNoticeLogout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                GoogleSignIn.getClient(getBaseContext(),GoogleSignInOptions.DEFAULT_SIGN_IN).signOut();
               finish();
             }
         });

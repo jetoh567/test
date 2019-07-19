@@ -14,9 +14,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gurufinalproject.R;
+import com.example.gurufinalproject.activity.LoginActivity;
 import com.example.gurufinalproject.bean.MemberBean;
 import com.example.gurufinalproject.bean.NoteBean;
 import com.example.gurufinalproject.db.FileDB;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -52,9 +56,6 @@ public class AdminCheckWritingActivity extends AppCompatActivity {
 
         name.setText("이름 : " + memberBean.name);
         switch(memberBean.userNum){
-            case 0:
-                department.setText("근무부서 : 상황실");
-                break;
             case 1:
                 department.setText("근무부서 : 학생 지원실");
                 break;
@@ -71,6 +72,7 @@ public class AdminCheckWritingActivity extends AppCompatActivity {
         findViewById(R.id.btnAdminLogout).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                GoogleSignIn.getClient(getBaseContext(),GoogleSignInOptions.DEFAULT_SIGN_IN).signOut();
                finish();
             }
         });

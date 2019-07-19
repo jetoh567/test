@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import com.example.gurufinalproject.bean.MemberBean;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -158,5 +159,6 @@ public class FileDB {
         MemberBean memberBean = mGson.fromJson(str, MemberBean.class);
         return getFindAdmin(context, memberBean.userid);
     }
+
 
 }

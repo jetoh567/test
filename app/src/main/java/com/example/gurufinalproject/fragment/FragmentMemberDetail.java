@@ -13,6 +13,8 @@ import androidx.fragment.app.Fragment;
 import com.example.gurufinalproject.R;
 import com.example.gurufinalproject.bean.MemberBean;
 import com.example.gurufinalproject.db.FileDB;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
 public class FragmentMemberDetail extends Fragment {
 
@@ -35,6 +37,8 @@ public class FragmentMemberDetail extends Fragment {
         btnMemLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                GoogleSignIn.getClient(getContext(), GoogleSignInOptions.DEFAULT_SIGN_IN).signOut();
                 getActivity().finish();
             }
         });
