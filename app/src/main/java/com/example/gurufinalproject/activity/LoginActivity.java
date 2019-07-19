@@ -27,6 +27,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.GoogleAuthProvider;
 
+import java.io.File;
+
 public class LoginActivity extends AppCompatActivity {
     //구글 로그인 클라이언트 제어자
     private GoogleSignInClient mGoogleSignInClient;
