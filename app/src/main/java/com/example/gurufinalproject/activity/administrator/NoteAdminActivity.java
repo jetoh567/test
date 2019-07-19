@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,15 +19,12 @@ import com.example.gurufinalproject.bean.NoteBean;
 import com.example.gurufinalproject.db.FileDB;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
 
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import static com.example.gurufinalproject.activity.NoteWriteActivity.STORAGE_DB_URL;
 
 public class NoteAdminActivity extends AppCompatActivity {
 

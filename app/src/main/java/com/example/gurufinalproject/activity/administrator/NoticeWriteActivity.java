@@ -1,28 +1,19 @@
 package com.example.gurufinalproject.activity.administrator;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.gurufinalproject.R;
 import com.example.gurufinalproject.bean.MemberBean;
-import com.example.gurufinalproject.bean.NoteBean;
 import com.example.gurufinalproject.bean.NoticeBean;
 import com.example.gurufinalproject.db.FileDB;
-import com.google.android.gms.tasks.Continuation;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

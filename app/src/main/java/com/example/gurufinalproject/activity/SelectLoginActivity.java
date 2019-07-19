@@ -39,8 +39,7 @@ public class SelectLoginActivity extends AppCompatActivity {
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this,googleSignInOptions);
-        findAdmin = FileDB.getFindAdmin(getBaseContext(),account);
-        findmember= FileDB.getFindMember(getBaseContext(),account);
+
     }
 
     View.OnClickListener mBtnClick = new View.OnClickListener() {
@@ -74,6 +73,9 @@ public class SelectLoginActivity extends AppCompatActivity {
                         Toast.makeText(getBaseContext(),"Google 로그인 인증 후 회원가입 가능합니다.",Toast.LENGTH_SHORT).show();
                         return;
                     }
+
+                    findAdmin = FileDB.getFindAdmin(getBaseContext(),account);
+                    findmember= FileDB.getFindMember(getBaseContext(),account);
 
                     if(findAdmin != null || findmember != null){
                         Toast.makeText(getBaseContext(),"이미 가입되어 있는 아이디입니다.",Toast.LENGTH_SHORT).show();

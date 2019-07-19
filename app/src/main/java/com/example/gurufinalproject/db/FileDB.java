@@ -5,8 +5,6 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 
 import com.example.gurufinalproject.bean.MemberBean;
-import com.example.gurufinalproject.bean.NoteBean;
-import com.example.gurufinalproject.bean.NoticeBean;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 

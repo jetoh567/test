@@ -1,6 +1,5 @@
 package com.example.gurufinalproject.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +12,6 @@ import androidx.fragment.app.Fragment;
 
 import com.example.gurufinalproject.R;
 import com.example.gurufinalproject.activity.NoteAdapter;
-import com.example.gurufinalproject.activity.NoteDetailActivity;
 import com.example.gurufinalproject.bean.NoteBean;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
