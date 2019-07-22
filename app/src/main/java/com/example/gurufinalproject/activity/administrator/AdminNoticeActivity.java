@@ -49,9 +49,9 @@ public class AdminNoticeActivity extends AppCompatActivity {
         MemberBean memberBean = FileDB.getLoginAdmin(this);
 
         String department ="" ;
-        txtAdminName.setText("이름 : " + memberBean.name);
-        txtAdminPart.setText("근무부서 : 상황실");
-        txtAdminNum.setText("연락처 : " +memberBean.phoneNum);
+        txtAdminName.setText(memberBean.name);
+        txtAdminPart.setText("상황실");
+        txtAdminNum.setText(memberBean.phoneNum);
 
         findViewById(R.id.btnNoticeLogout).setOnClickListener(new View.OnClickListener() {
             @Override

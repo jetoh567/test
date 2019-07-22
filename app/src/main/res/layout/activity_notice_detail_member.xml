@@ -18,6 +18,8 @@
         android:text="제목"
         android:layout_gravity="center"
         android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#AB3030"
         android:layout_marginTop="20dp"/>
 
     <TextView
@@ -35,9 +37,11 @@
         android:layout_height="0dp"
         android:layout_weight="5.5"
         android:text="공지사항"
+        android:padding="10dp"
         android:layout_margin="10dp"
         android:textSize="20dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@drawable/boarder"/>
 
     <TextView
         android:id="@+id/txtNoticeDateMe"

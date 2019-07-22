@@ -54,19 +54,19 @@ public class AdminCheckWritingActivity extends AppCompatActivity {
 
         memberBean = FileDB.getLoginAdmin(this);
 
-        name.setText("이름 : " + memberBean.name);
+        name.setText(memberBean.name);
         switch(memberBean.userNum){
             case 1:
-                department.setText("근무부서 : 학생 지원실");
+                department.setText("학생 지원실");
                 break;
             case 2:
-                department.setText("근무부서 : 기관실");
+                department.setText("기관실");
                 break;
             case 3:
-                department.setText("근무부서 : 경비실");
+                department.setText("경비실");
                 break;
         }
-        number.setText("연락처 : "+memberBean.phoneNum);
+        number.setText(memberBean.phoneNum);
 
 
         findViewById(R.id.btnAdminLogout).setOnClickListener(new View.OnClickListener() {

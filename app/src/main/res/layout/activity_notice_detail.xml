@@ -18,6 +18,8 @@
         android:text="제목"
         android:layout_gravity="center"
         android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#AB3030"
         android:layout_marginTop="20dp"/>
 
     <TextView
@@ -35,9 +37,11 @@
         android:layout_height="0dp"
         android:layout_weight="5.5"
         android:text="공지사항"
+        android:padding="10dp"
         android:layout_margin="10dp"
         android:textSize="20dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@drawable/boarder"/>
 
     <TextView
         android:id="@+id/txtNoticeDate"
@@ -58,13 +62,12 @@
 
     <Button
         android:id="@+id/btnNoticeModify"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:text="수정하러 가기"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:text="수정"
         android:layout_gravity="center"
+        android:background="#AB3030"
         android:textColor="#ffffff"
-        android:textStyle="bold"
-        android:background="#AB3030"/>
+        android:textStyle="bold"/>
 
 </LinearLayout>

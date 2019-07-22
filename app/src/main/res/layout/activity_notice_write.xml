@@ -12,18 +12,20 @@
 
     <EditText
         android:id="@+id/edtNoticeTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:hint="제목을 입력하세요."
         android:textSize="40dp"
+        android:padding="10dp"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:background="@drawable/boarder"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.5"
-        android:layout_marginLeft="50dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
         android:textColor="#B34949"
         android:text="제목은 한번에 알아볼 수 있는 내용으로 선정"
         />
@@ -36,6 +38,8 @@
         android:hint="공지사항을 작성해주세요."
         android:textSize="20dp"
         android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:background="@drawable/boarder"
         android:layout_gravity="center"/>
 
     <LinearLayout
@@ -43,8 +47,8 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:layout_weight="1"
-        android:gravity="center">
-
+        android:gravity="center"
+        android:layout_marginTop="10dp">
 
         <Button
             android:id="@+id/btnNoticeCancel"
@@ -54,7 +58,8 @@
             android:layout_gravity="center"
             android:textColor="#ffffff"
             android:textStyle="bold"
-            android:background="#AB3030"/>
+            android:background="#AB3030"
+            android:layout_marginRight="5dp"/>
         <Button
             android:id="@+id/btnNoticeComplete"
             android:layout_width="wrap_content"
@@ -64,7 +69,6 @@
             android:textColor="#ffffff"
             android:textStyle="bold"
             android:background="#AB3030"
-            android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"/>
 
 
