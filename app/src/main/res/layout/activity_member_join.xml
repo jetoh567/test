@@ -57,7 +57,8 @@
                 android:background="@drawable/boarder"
                 android:ems="12"
                 android:inputType="textMultiLine|textNoSuggestions"
-                android:layout_gravity="left|center"/>
+                android:layout_gravity="left|center"
+                android:padding="5dp"/>
         </LinearLayout>
 
         <LinearLayout
@@ -83,7 +84,8 @@
                 android:background="@drawable/boarder"
                 android:ems="12"
                 android:inputType="textMultiLine|textNoSuggestions"
-                android:layout_gravity="left|center"/>
+                android:layout_gravity="left|center"
+                android:padding="5dp"/>
         </LinearLayout>
 
 
@@ -119,7 +121,8 @@
                 android:background="@drawable/boarder"
                 android:ems="12"
                 android:inputType="textMultiLine|textNoSuggestions"
-                android:layout_gravity="left|center"/>
+                android:layout_gravity="left|center"
+                android:padding="5dp"/>
         </LinearLayout>
 
         <Button
