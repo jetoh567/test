@@ -26,32 +26,104 @@
         android:background="#AB3030"
         android:layout_marginBottom="10dp"/>
 
-    <TextView
-        android:id="@+id/txtMemName"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="TextView"
-        android:textSize="20dp"
-        android:layout_weight="1"
-        android:layout_gravity="center"/>
+        android:layout_weight="4"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/boarder"
+            android:lines="14"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtMemId"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="TextView"
-        android:textSize="20dp"
-        android:layout_weight="1"
-        android:layout_gravity="center"/>
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="42dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/uni_logo" />
 
-    <TextView
-        android:id="@+id/txtMemNum"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:text="TextView"
-        android:textSize="20dp"
-        android:layout_weight="1"
-        android:layout_gravity="center"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이름 : "
+                    android:layout_margin="10dp"
+                    android:textColor="#AB3030"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/txtMemName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="학번 : "
+                    android:layout_margin="10dp"
+                    android:textColor="#AB3030"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/txtMemNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이메일 : "
+                    android:layout_margin="10dp"
+                    android:textColor="#AB3030"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center"/>
+
+                <TextView
+                    android:id="@+id/txtMemId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TextView"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+
+
 
 
     <Button

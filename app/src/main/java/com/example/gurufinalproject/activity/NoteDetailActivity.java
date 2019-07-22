@@ -39,8 +39,8 @@ public class NoteDetailActivity extends AppCompatActivity {
         NoteBean note  = (NoteBean) getIntent().getSerializableExtra("detail");
 
         writer.setText("신고자 : "+note.userName);
-        location.setText("신고 위치 : " +note.location);
-        content.setText("신고 내용 : " + note.detail);
+        location.setText(note.location);
+        content.setText(note.detail);
         if(note.access == true){
             access.setText("비공개 글");
             access.setTextColor(Color.rgb(255,0,0));

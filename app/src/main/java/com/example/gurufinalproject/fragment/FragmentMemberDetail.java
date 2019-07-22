@@ -29,9 +29,9 @@ public class FragmentMemberDetail extends Fragment {
 
         MemberBean memberBean = FileDB.getLoginMember(getContext());
 
-        txtMemName.setText("이름 : " + memberBean.name);
-        txtMemId.setText("이메일 : " + memberBean.userid);
-        txtMemNum.setText("학번 : " + memberBean.userNum );
+        txtMemName.setText(memberBean.name);
+        txtMemId.setText(memberBean.userid);
+        txtMemNum.setText(memberBean.userNum );
 
         Button btnMemLogout = view.findViewById(R.id.btnMemLogout);
         btnMemLogout.setOnClickListener(new View.OnClickListener() {
