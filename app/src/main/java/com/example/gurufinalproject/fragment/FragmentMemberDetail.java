@@ -24,14 +24,14 @@ public class FragmentMemberDetail extends Fragment {
 
 
         TextView txtMemName = view.findViewById(R.id.txtMemName);
-        TextView txtMemId = view.findViewById(R.id.txtMemId);
         TextView txtMemNum = view.findViewById(R.id.txtMemNum);
+        TextView txtMemId = view.findViewById(R.id.txtMemId);
 
         MemberBean memberBean = FileDB.getLoginMember(getContext());
 
         txtMemName.setText(memberBean.name);
+        txtMemNum.setText( String.valueOf(memberBean.userNum) );
         txtMemId.setText(memberBean.userid);
-        txtMemNum.setText(memberBean.userNum );
 
         Button btnMemLogout = view.findViewById(R.id.btnMemLogout);
         btnMemLogout.setOnClickListener(new View.OnClickListener() {
