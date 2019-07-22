@@ -80,6 +80,7 @@
             android:inputType="textMultiLine|textNoSuggestions"
             android:lines="2"
             android:layout_gravity="left|center"
+            android:padding="5dp"
             />
     </LinearLayout>
 
@@ -109,7 +110,8 @@
             android:ems="15"
             android:inputType="textMultiLine|textNoSuggestions"
             android:layout_gravity="left|center"
-            android:lines="7" />
+            android:lines="7"
+            android:padding="5dp"/>
     </LinearLayout>
 
     <CheckBox

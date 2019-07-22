@@ -16,7 +16,7 @@
             android:id="@+id/NoticeTitle"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3"
+            android:layout_weight="4"
             android:text="공지사항 제목"
             android:textStyle="bold"
             android:textColor="#AB3030"
